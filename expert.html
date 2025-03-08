@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Advice - HubspHere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="expert.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">HubspHere</a>
+        <nav class="nav-links">
+          <a href="plant library.html">Plant Library</a>
+          <a href="expert.html">Expert Advice</a>
+          <a href="VR.html">Virtual Tours</a>
+          <a href="herbalgarden.html">Herbal Garden</a>
+          <a href="#faq">FAQs</a>
+          
+          <div class="auth-container">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+          </div>
+        </nav>
+    </header>
+
+    <main class="expert-container">
+        <section class="advice-hero">
+            <h1>Ayurvedic Expert Consultation</h1>
+            <p>Connect with certified Ayurvedic practitioners for personalized herbal solutions</p>
+        </section>
+
+        <section class="consultation-options">
+            <div class="consultation-card">
+                <h2><i class="fas fa-video"></i> Video Consultation</h2>
+                <p>60-minute live session with an expert</p>
+                <ul>
+                    <li>Personalized health assessment</li>
+                    <li>Herbal remedy formulation</li>
+                    <li>Follow-up plan included</li>
+                </ul>
+                <button class="submit-btn">Book Session</button>
+            </div>
+
+            <div class="consultation-card">
+                <h2><i class="fas fa-clipboard-list"></i> Plant Identification</h2>
+                <p>Get expert analysis of your medicinal plants</p>
+                <ul>
+                    <li>Photo-based identification</li>
+                    <li>Cultivation guidance</li>
+                    <li>Usage recommendations</li>
+                </ul>
+                <button class="submit-btn">Submit Photos</button>
+            </div>
+
+            <div class="consultation-card">
+                <h2><i class="fas fa-prescription-bottle"></i> Remedy Review</h2>
+                <p>Have your herbal preparations evaluated</p>
+                <ul>
+                    <li>Dosage verification</li>
+                    <li>Safety check</li>
+                    <li>Optimization suggestions</li>
+                </ul>
+                <button class="submit-btn">Submit Remedy</button>
+            </div>
+        </section>
+
+        <section class="featured-experts">
+            <h2>Our Ayurvedic Specialists</h2>
+            <div class="expert-profile">
+                <img src="expert1.jpg" alt="Dr. Anika Patel" class="expert-image">
+                <div class="expert-info">
+                    <h3>Dr. Anika Patel</h3>
+                    <p>MD Ayurveda, 15+ years experience</p>
+                    <p>Specialization: Herbal Formulations</p>
+                    <div class="expert-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        (4.9/5)
+                    </div>
+                </div>
+            </div>
+            <!-- Add more expert profiles -->
+        </section>
+
+        <section class="booking-form">
+            <h2>Schedule Consultation</h2>
+            <form>
+                <div class="form-group">
+                    <label>Select Consultation Type:</label>
+                    <select>
+                        <option>Video Consultation</option>
+                        <option>Plant Identification</option>
+                        <option>Remedy Review</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date & Time:</label>
+                    <input type="datetime-local">
+                </div>
+                <div class="form-group">
+                    <label>Your Concerns:</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Appointment</button>
+            </form>
+        </section>
+
+        <section class="testimonials">
+            <div class="testimonial-card">
+                <p>"The expert guidance helped me create effective herbal remedies for my family's health needs."</p>
+                <h4>- Rajesh Kumar</h4>
+            </div>
+            <!-- Add more testimonials -->
+        </section>
+
+        <section class="faq-section">
+            <h2>Common Questions</h2>
+            <div class="faq-item">
+                <h3>How do I prepare for a consultation?</h3>
+                <p>Have your medical history and any current medications ready for discussion.</p>
+            </div>
+            <!-- Add more FAQ items -->
+        </section>
+    </main>
+
+    <footer class="library-footer">
+        <!-- Use similar footer from previous pages -->
+    </footer>
+
+    <script>
+        // Reuse JavaScript from previous pages
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
