@@ -1,0 +1,305 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("Designer.jpeg");
+}
+/* navbar  */
+/* ===== HEADER & NAVIGATION ===== */
+h1{
+    font-family: 'Press Start 2P',monospace;
+    color: gradiant(white,black);
+  }
+  header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background:rgba(227, 220, 118, 0.9); /* Transparent button background */
+    padding-left: 0px;
+    padding-right: 0px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: opacity, transform var(--transition-speed);
+    opacity: 0.4;
+    color: rgba(0, 0, 0, 1); 
+    font-size: medium;
+    font-weight: bold;
+  }
+.logo {
+    font-family: 'Press Start 2P';
+    color: linear-gradient(#8d6a6a,#fff);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    padding-right: 50px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem; /* Reduced gap to remove extra spacing */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--earth-brown);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    justify-content: end;
+    text-decoration: none;
+
+    
+}
+
+.nav-links a:hover {
+    background: rgba(129, 199, 132, 0.1);
+    color: var(--primary-green);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem; /* Reduced gap to remove extra spacing */
+    margin-left: 0px;
+    position: 0px;
+    padding-left: 2rem;
+    padding-right: 0%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 2px;
+    background: rgba(109, 76, 65, 0.2);
+}
+
+.auth-container button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.login-btn {
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.signup-btn {
+    background: var(--primary-green);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.auth-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
+}
+
+#root {
+    position: fixed; /* Fixed so it covers the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Lower than .content-container */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.content-container {
+    position: absolute; /* Now independent from #root */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(63, 228, 112, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensures it is above #root */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', monospace;
+    color: rgba(7, 4, 4, 0.555); /* Softer text color */
+    overflow: hidden; /* Ensures the text is hidden initially */
+    border-right: .15em solid rgba(7, 4, 4, 0.555); /* Creates the typing cursor effect */
+    white-space: nowrap; /* Prevents text from wrapping */
+    margin: 0 auto; /* Centers the text */
+    letter-spacing: .15em; /* Adds spacing between letters */
+    width: 6ch; /* Adjust width to fit the word "Login" */
+    animation: typing 0.5s steps(6, end), blink-caret .75s step-end infinite; /* Typing and blinking cursor animations */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 6ch } /* Adjust width to fit the word "Login" */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(7, 4, 4, 0.667); }
+}
+
+input[type="text"], input[type="password"] {
+    width: 85%;
+    font: optional;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(7, 1, 1, 0.7); /* Lighter border */
+    padding: 5px;
+    font-size: 16px;
+    background: rgba(227, 218, 218, 0.272); /* Transparent input background */
+    color: rgb(183, 29, 29); /* White text color */
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid rgba(7, 1, 1, 0.9); /* Darker border on focus */
+}
+
+.social-login {
+    display: flex;
+    flex-direction: row; /* Change to row to align buttons horizontally */
+    justify-content: center; /* Center the buttons */
+    gap: 8px; /* Add space between the buttons */
+    margin: 20px;
+    margin-left: 0; /* Fix the left spacing */
+}
+
+.google-btn, .github-btn {
+    width: 40%; /* Adjust width to fit two buttons side by side */
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    padding-left: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    animation: bounce 2s infinite; /* Bounce effect */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.google-btn {
+    background-color: #db4437; /* Google red */
+}
+
+.google-btn:hover {
+    background-color: #c33d2e;
+    box-shadow: 0 0 10px #db4437, 0 0 20px #db4437, 0 0 30px #db4437, 0 0 50px #db4437; /* Enhanced neon glow on hover */
+}
+
+.github-btn {
+    background-color: #333; /* GitHub black */
+}
+
+.github-btn:hover {
+    background-color: #24292e;
+    box-shadow: 0 0 5px #333, 0 0 20px #333, 0 0 30px #333, 0 0 50px #333; /* Enhanced neon glow on hover */
+}
+
+button {
+    width: 85%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    background-color: rgba(76, 175, 80, 0.8); /* Transparent button background */
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    animation: bounce 2s infinite; /* Bounce effect */
+}
+
+button:hover {
+    background-color: rgba(69, 160, 73, 0.8); /* Transparent hover effect */
+    box-shadow: 0 0 5px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 50px #4CAF50; /* Enhanced neon glow on hover */
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+button span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+button:hover span::before {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+#terms-container {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#terms {
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8); /* Softer text color */
+}

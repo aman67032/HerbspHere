@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <title>HerbspHere</title>
+</head>
+<body>
+    <script> window.chtlConfig = { chatbotId: "3372489535" } </script>
+    <script async data-id="3372489535" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <header>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links">
+          <a href="plant library.html">Plant Library</a>
+          <a href="expert.html">Expert Advice</a>
+          <a href="VR.html">Virtual Tours</a>
+          <a href="herbalgarden.html">Herbal Garden</a>
+          <a href="">FAQs</a>
+          
+          <div class="auth-container">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+          </div>
+          </nav>
+        </header>
+        <div class="pagination-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <!-- Add more dots as needed -->
+          </div>
+    <!-- Existing Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Virtual Herbal Garden</h1>
+            <!-- Existing search bar -->
+        </div>
+    </section>
+    <main>
+        <div class="slide-container">
+            <img src="fav.jpg" alt="Clove" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">Discover Rare Medicinal Plants</div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <img src="Herb.jpg" alt="3D Image" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">Explore 3D Plant Models</div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <img src="garden.jpg" alt="Garden" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">Virtual Garden Tours</div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <img src="COMM.jpg" alt="Garden" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">Community</div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <img src="FAQ.jpg" alt="Garden" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">FAQs</div>
+            </div>
+        </div>
+        <div class="slide-container">
+            <img src="FEED.jpg" alt="Garden" class="slide">
+            <div class="slide-caption">
+                <div class="caption-background"></div>
+                <div class="caption-text">Feedback</div>
+            </div>
+        </div>
+        <!-- Add similar structure for other slides -->
+    </main>
+  
+    <div class="nav">
+        <button onclick="goPrev()"></button>
+        <button onclick="goNext()"></button>
+    </div>
+
+    <!-- New Expert Advice Section -->
+    <section class="expert-advice" id="expert">
+        <h2 class="h2">Consult with Ayurvedic Experts</h2>
+        <div class="expert-grid">
+            <div class="expert-card" onclick="location.href='plant library.html#advanced-filter'">
+                <i class="fas fa-leaf"></i>
+                <h3>Find Your Plant</h3>
+                <p>"Looking for a specific plant? Use our advanced search and filtering system to quickly find medicinal plants based on their properties, uses, or habitat. Click below to get started!"</p>
+            </div>
+            <div class="expert-card">
+                <i class="fas fa-prescription-bottle"></i>
+                <h3>Remedy Formulation</h3>
+                <p>Personalized herbal preparations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New FAQ Section -->
+    <section class="faq-section" id="faq" >
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>What is HerbspHere?</h3>
+                <p>HerbspHere is an interactive virtual herbal garden that helps users explore, learn, and engage with medicinal plants used in AYUSH. It offers a smart plant library, themed virtual gardens, and a gamified "My Garden" experience.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Who can use HerbspHere?</h3>
+                <p>HerbspHere is designed for students, researchers, herbal enthusiasts, and anyone interested in learning about medicinal plants. You don't need prior knowledge—our platform makes learning easy and interactive!</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is HerbspHere free to use?</h3>
+                <p>Yes! HerbspHere is completely free to explore, with future plans to introduce premium features for advanced learning and expert consultations.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does the Virtual Herbal Garden work?</h3>
+                <p>The Virtual Herbal Garden is a themed digital space where plants are categorized based on their medicinal properties (e.g., immunity boosters, skincare herbs). Users can explore, hover, and click on plants to learn about their benefits.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I create my own garden?</h3>
+                <p>Yes! We are currently working on the "My Garden" feature which will allow users to customize and grow their own virtual collection of medicinal plants.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is My Garden a real gardening guide?</h3>
+                <p>While "My Garden" will be a virtual experience, it will also provide real gardening tips to help users grow medicinal plants at home.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I find a specific plant?</h3>
+                <p>Use our Smart Plant Library with advanced search filters: by name (Scientific, Common, or Regional), medicinal uses, plant part used, or region/climate suitability.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to install anything?</h3>
+                <p>No! HerbspHere is a fully web-based platform that works without installation.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will you add more plants and features?</h3>
+                <p>Absolutely! We're constantly expanding our plant database and adding new features like AI-powered plant recognition.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I give feedback?</h3>
+                <p>Use the Feedback & Support section on our website to share your thoughts or report any issues.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will there be an AI plant identification tool?</h3>
+                <p>We're working on integrating an AI-based plant identification system for instant plant details from images.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I contribute plant data?</h3>
+                <p>Future plans include a user contribution feature for suggesting plants or providing verified information.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a community forum?</h3>
+                <p>We're working on adding a community forum for discussions about medicinal plants and herbal remedies.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does HerbspHere provide expert advice?</h3>
+                <p>We're exploring partnerships with AYUSH practitioners to offer verified insights in the future.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will HerbspHere remain free?</h3>
+                <p>Core features will always be free. Premium features may include personalized gardening advice and expert consultations.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I get started?</h3>
+                <p>Simply visit our website, sign up, and browse the Plant Library or explore the Virtual Garden.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How to search plants quickly?</h3>
+                <p>Use the advanced search bar in the Plant Library with multiple filter options.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I bookmark plants?</h3>
+                <p>Coming soon! A bookmark feature will let you save favorite plants for easy access.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Virtual Garden vs My Garden?</h3>
+                <p>• Virtual Garden: Pre-built themed gardens • My Garden: Personalized space to grow your own plant collection</p>
+            </div>
+            <div class="faq-item">
+                <h3>How accurate is the information?</h3>
+                <p>All data is sourced from authentic AYUSH guidelines and verified botanical research.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I learn home gardening?</h3>
+                <p>Yes! Each plant profile includes gardening tips about soil, water, sunlight, and seasonal care.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are there step-by-step guides?</h3>
+                <p>Yes! Our website includes guided tutorials for growing common medicinal plants.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How to report issues?</h3>
+                <p>Use the Feedback & Support section to report bugs or suggest improvements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Feedback Section -->
+    <section class="feedback-support" id="feedback">
+        <h2 class="h2">Support Center</h2>
+        <div class="feedback-options">
+            <div class="contact-form">
+                <h3 class="h2">Send us a Message</h3>
+                <form>
+                    <textarea placeholder="Your message..."></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="support-info">
+                <h3>Quick Help</h3>
+                <p>Email: support@herbalhub.com</p>
+                <p>24/7 Chat Support Available</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="home.js"></script>
+</body>
+</html>
+
+

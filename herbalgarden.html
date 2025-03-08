@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Herbal Garden</title>
+    <style>
+      h1{
+  font-family: 'Press Start 2P',monospace;
+  color: gradiant(white,black);
+}
+/* navbar  */
+/* ===== HEADER & NAVIGATION ===== */
+h1{
+    font-family: 'Press Start 2P',monospace;
+    color: gradiant(white,black);
+  }
+  header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background:linear-gradient(#eab35b,#9f6e5e);
+    padding-left: 50px;
+    padding-right: 0px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1); 
+    font-size: medium;
+    font-weight: bold;
+  }
+.logo {
+    font-family: 'Press Start 2P';
+    color: linear-gradient(#8d6a6a,#fff);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    padding-right: 50px;
+    text-decoration: none;
+    color: rgb(69, 30, 6);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem; /* Reduced gap to remove extra spacing */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--earth-brown);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    justify-content: end;
+    text-decoration: none;
+
+    
+}
+
+.nav-links a:hover {
+    background: rgba(129, 199, 132, 0.1);
+    color: var(--primary-green);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem; /* Reduced gap to remove extra spacing */
+    margin-left: 0px;
+    position: 0px;
+    padding-left: 2rem;
+    padding-right: 0%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 2px;
+    background: rgba(109, 76, 65, 0.2);
+}
+
+.auth-container button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.login-btn {
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.signup-btn {
+    background: var(--primary-green);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.auth-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
+}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #6b8c42;
+            font-family: 'Press Start 2P', monospace;
+            background-image: url("dd.jpg"),
+                linear-gradient(rgba(0,0,0,0.1) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1) 75%,
+                transparent 75%,
+                transparent);
+            background-size: 40px 40px;
+            animation: backgroundScroll 4s linear infinite;
+        }
+
+        @keyframes backgroundScroll {
+            from { background-position: 0 0; }
+            to { background-position: 40px 40px; }
+        }
+        h1{
+          font-size: large;
+        }
+        .container {
+            width: 2000px;
+            height: 2000px;
+            margin: 300px;
+            margin-left: 40px;
+            text-align: center;
+        }
+
+        .title {
+            color: #8ec768;
+            text-shadow: 4px 4px #306850;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .garden-options {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .option-button {
+  width: 700px;
+  height: 700px;
+  background: #88c070;
+  border: 4px solid #e0f8d0;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 8px 8px #306850;
+}
+
+.option-button:hover {
+  transform: translateY(-5px);
+  background: #a8d890;
+}
+
+.option-button::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  background: #306850;
+  z-index: -1;
+}
+
+.option-text {
+  color: #d0e7c0;
+  font-size: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px #306850;
+}
+
+.pixel-art {
+  width: 700px;
+  height: 600px;
+  margin: 10px auto;
+}
+
+.pixel-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">HubspHere</a>
+    <nav class="nav-links">
+      <a href="plant library.html">Plant Library</a>
+      <a href="expert.html">Expert Advice</a>
+      <a href="VR.html">Virtual Tours</a>
+      <a href="herbalgarden.html">Herbal Garden</a>
+      <a href="#faq">FAQs</a>
+      
+      <div class="auth-container">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="signup.html" class="signup-btn">Sign Up</a>
+      </div>
+    </nav>
+</header>
+    <div class="container">
+        <h1 class="title">HERBAL GARDEN</h1>
+        
+        <div class="garden-options">
+            <div class="option-button">
+                <div class="pixel-art">
+                    <!-- Add your pixel art image for theme based garden here -->
+                     <img src="ahf.jpg" class="img" alt="Herbal Garden" />
+                </div>
+                <div class="option-text">THEME BASED GARDEN</div>
+            </div>
+            
+            <div class="option-button">
+                <div class="pixel-art">
+                  <!-- Add your pixel art image for my garden here -->
+                  <img src="hb1.jpg" class="img" alt="My Garden Pixel Art" />
+                </div>
+                <a class="option-text" href="mygarden.html">MY GARDEN</a>
+            </div>
+         </div>
+        </div>
+    </div>
+</body>
+</html>

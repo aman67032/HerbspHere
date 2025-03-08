@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Herb Hub</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        #ar-scene { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .ar-interface {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+        .plant-card {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+        }
+        .environment-stats p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        #loading-screen {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #4CAF50;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">Initializing AR...</div>
+    
+    <a-scene 
+        id="ar-scene" 
+        embedded 
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix;"
+        renderer="logarithmicDepthBuffer: true;"
+    >
+        <a-camera></a-camera>
+        <a-entity id="plants-container"></a-entity>
+        <a-entity arjs-plane="planeType: floor" material="opacity: 0.5"></a-entity>
+    </a-scene>
+
+    <div class="ar-interface">
+        <div class="plant-suggestions">
+            <div class="plant-card" data-plant="basil">
+                <h3>Basil</h3>
+                <p class="match-percent">87% Match</p>
+                <button onclick="placePlant('basil')">Add</button>
+            </div>
+            <div class="plant-card" data-plant="mint">
+                <h3>Mint</h3>
+                <p class="match-percent">72% Match</p>
+                <button onclick="placePlant('mint')">Add</button>
+            </div>
+        </div>
+        <div class="environment-stats">
+            <p>Light: 🌞 <span id="light-value">4h/day</span></p>
+            <p>Space: 📏 <span id="space-value">2.3m²</span></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
