@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="herbal-medicines.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Herbal Medicines - HerbspHere</title>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="plant library.html">Plant Library</a>
+            <a href="expert.html">Expert Advice</a>
+            <a href="VR.html">HerbVerse</a>
+            <a href="herbalgarden.html">Herbal Garden</a>
+            <a href="herbal-medicines.html" class="active">Herbal Medicines</a>
+            <a href="#faq">FAQs</a>
+            <div class="auth-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Traditional Herbal Medicines</h1>
+            <p>Ancient wisdom for modern wellness</p>
+            <div class="search-container">
+                <input type="text" id="medicine-search" placeholder="Search herbal medicines...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label>Filter by Health Concern:</label>
+                <select id="health-filter">
+                    <option value="all">All Concerns</option>
+                    <option value="digestion">Digestive Health</option>
+                    <option value="immunity">Immunity</option>
+                    <option value="stress">Stress & Anxiety</option>
+                    <option value="inflammation">Inflammation</option>
+                    <option value="respiratory">Respiratory Health</option>
+                    <option value="sleep">Sleep & Relaxation</option>
+                    <option value="skin">Skin Health</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Preparation Method:</label>
+                <select id="preparation-filter">
+                    <option value="all">All Methods</option>
+                    <option value="tea">Herbal Tea</option>
+                    <option value="tincture">Tincture</option>
+                    <option value="powder">Powder</option>
+                    <option value="oil">Oil</option>
+                    <option value="compress">Compress/Poultice</option>
+                    <option value="decoction">Decoction</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Difficulty Level:</label>
+                <select id="difficulty-filter">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="medicines-grid-section">
+        <h2>Explore Herbal Medicines</h2>
+        <div class="medicines-grid" id="medicines-container">
+            <!-- Medicine Card 1 -->
+            <div class="medicine-card" data-category="digestion immunity" data-preparation="tea" data-difficulty="beginner">
+                <div class="medicine-image">
+                    <img src="ginger-tea.jpg" alt="Ginger Tea">
+                    <div class="difficulty-badge beginner">Beginner</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Ginger Immune Tea</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Digestion</span>
+                        <span class="tag">Immunity</span>
+                    </div>
+                    <p>A warming tea that boosts immunity and aids digestion.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 15 mins</span>
+                        <span><i class="fas fa-leaf"></i> 3 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('ginger-tea')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 2 -->
+            <div class="medicine-card" data-category="stress sleep" data-preparation="tea" data-difficulty="beginner">
+                <div class="medicine-image">
+                    <img src="chamomile-tea.jpg" alt="Chamomile Tea">
+                    <div class="difficulty-badge beginner">Beginner</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Calming Chamomile Blend</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Stress</span>
+                        <span class="tag">Sleep</span>
+                    </div>
+                    <p>A soothing blend to calm the mind and promote restful sleep.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-leaf"></i> 4 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('chamomile-blend')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 3 -->
+            <div class="medicine-card" data-category="inflammation" data-preparation="oil" data-difficulty="intermediate">
+                <div class="medicine-image">
+                    <img src="turmeric-oil.jpg" alt="Turmeric Oil">
+                    <div class="difficulty-badge intermediate">Intermediate</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Anti-Inflammatory Turmeric Oil</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Inflammation</span>
+                        <span class="tag">Pain Relief</span>
+                    </div>
+                    <p>A powerful topical oil blend for inflamed joints and muscles.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 3-4 weeks</span>
+                        <span><i class="fas fa-leaf"></i> 5 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('turmeric-oil')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 4 -->
+            <div class="medicine-card" data-category="respiratory" data-preparation="tea decoction" data-difficulty="beginner">
+                <div class="medicine-image">
+                    <img src="thyme-tea.jpg" alt="Thyme Respiratory Tea">
+                    <div class="difficulty-badge beginner">Beginner</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Respiratory Support Tea</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Respiratory</span>
+                        <span class="tag">Cough Relief</span>
+                    </div>
+                    <p>An effective blend of herbs to support respiratory health and clear congestion.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-leaf"></i> 4 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('respiratory-tea')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 5 -->
+            <div class="medicine-card" data-category="stress" data-preparation="tincture" data-difficulty="advanced">
+                <div class="medicine-image">
+                    <img src="ashwagandha-tincture.jpg" alt="Ashwagandha Tincture">
+                    <div class="difficulty-badge advanced">Advanced</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Adaptogenic Stress Tincture</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Stress</span>
+                        <span class="tag">Energy</span>
+                    </div>
+                    <p>A potent herbal tincture to help the body adapt to stress and boost resilience.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 6-8 weeks</span>
+                        <span><i class="fas fa-leaf"></i> 3 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('stress-tincture')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 6 -->
+            <div class="medicine-card" data-category="skin" data-preparation="oil" data-difficulty="intermediate">
+                <div class="medicine-image">
+                    <img src="calendula-oil.jpg" alt="Calendula Healing Oil">
+                    <div class="difficulty-badge intermediate">Intermediate</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Calendula Healing Oil</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Skin</span>
+                        <span class="tag">Wound Healing</span>
+                    </div>
+                    <p>A gentle healing oil for minor skin irritations, cuts, and scrapes.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 3-4 weeks</span>
+                        <span><i class="fas fa-leaf"></i> 2 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('calendula-oil')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 7 -->
+            <div class="medicine-card" data-category="digestion" data-preparation="powder" data-difficulty="beginner">
+                <div class="medicine-image">
+                    <img src="triphala-powder.jpg" alt="Triphala Digestive Powder">
+                    <div class="difficulty-badge beginner">Beginner</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Triphala Digestive Blend</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Digestion</span>
+                        <span class="tag">Detox</span>
+                    </div>
+                    <p>A traditional Ayurvedic formula to support digestion and gentle detoxification.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-leaf"></i> 3 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('triphala-blend')">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Medicine Card 8 -->
+            <div class="medicine-card" data-category="inflammation skin" data-preparation="compress" data-difficulty="intermediate">
+                <div class="medicine-image">
+                    <img src="yarrow-compress.jpg" alt="Yarrow Compress">
+                    <div class="difficulty-badge intermediate">Intermediate</div>
+                </div>
+                <div class="medicine-info">
+                    <h3>Yarrow Healing Compress</h3>
+                    <div class="medicine-tags">
+                        <span class="tag">Skin</span>
+                        <span class="tag">Inflammation</span>
+                    </div>
+                    <p>A traditional herbal compress for skin inflammations and minor injuries.</p>
+                    <div class="medicine-meta">
+                        <span><i class="fas fa-clock"></i> 30 mins</span>
+                        <span><i class="fas fa-leaf"></i> 4 ingredients</span>
+                    </div>
+                    <button class="view-recipe-btn" onclick="openRecipe('yarrow-compress')">View Recipe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="preparation-methods-section">
+        <h2>Herbal Medicine Preparation Methods</h2>
+        <div class="methods-container">
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <h3>Herbal Teas & Infusions</h3>
+                <p>The simplest method of extracting water-soluble compounds from herbs. Pour hot water over herbs and let steep.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('tea')">Learn How</a>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Tinctures</h3>
+                <p>Alcohol-based extracts that preserve and concentrate herbal properties, offering a longer shelf life.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('tincture')">Learn How</a>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-mortar-pestle"></i>
+                </div>
+                <h3>Powders</h3>
+                <p>Dried herbs ground into fine powder for convenient use in capsules, foods, or topical applications.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('powder')">Learn How</a>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <h3>Herbal Oils</h3>
+                <p>Oil-based extracts ideal for topical applications, massages, and base for salves and balms.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('oil')">Learn How</a>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-compress"></i>
+                </div>
+                <h3>Compresses & Poultices</h3>
+                <p>External applications that apply herbs directly to the skin for localized treatment.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('compress')">Learn How</a>
+            </div>
+            
+            <div class="method-card">
+                <div class="method-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Decoctions</h3>
+                <p>Simmered herb extracts ideal for tough plant materials like roots, bark, and seeds.</p>
+                <a href="#" class="learn-more" onclick="showMethodTutorial('decoction')">Learn How</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="herbal-safety-section">
+        <div class="safety-container">
+            <div class="safety-content">
+                <h2>Safe Use of Herbal Medicines</h2>
+                <ul class="safety-guidelines">
+                    <li><i class="fas fa-check-circle"></i> Always properly identify herbs before use</li>
+                    <li><i class="fas fa-check-circle"></i> Research potential herb-drug interactions</li>
+                    <li><i class="fas fa-check-circle"></i> Start with small amounts to test for allergic reactions</li>
+                    <li><i class="fas fa-check-circle"></i> Consult healthcare providers if pregnant, nursing, or on medication</li>
+                    <li><i class="fas fa-check-circle"></i> Store preparations properly to prevent contamination</li>
+                    <li><i class="fas fa-check-circle"></i> Use quality ingredients from reputable sources</li>
+                </ul>
+            </div>
+            <div class="safety-image">
+                <img src="herbal-safety.jpg" alt="Safe Herbal Preparation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="recipe-container"></div>
+        </div>
+    </div>
+
+    <!-- Method Tutorial Modal -->
+    <div id="method-modal" class="modal">
+        <div class="modal-content method-modal-content">
+            <span class="close-method-modal">&times;</span>
+            <div id="method-container"></div>
+        </div>
+    </div>
+
+    <script src="herbal-medicines.js"></script>
+</body>
+</html> 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">HubspHere</a>
+      <nav class="nav-links">
+        <a href="plant library.html">Plant Library</a>
+        <a href="expert.html">Expert Advice</a>
+        <a href="VR.html">Virtual Tours</a>
+        <a href="herbalgarden.html">Herbal Garden</a>
+        <a href="#faq">FAQs</a>
+        
+        <div class="auth-container">
+          <a href="login.html" class="login-btn">Login</a>
+          <a href="signup.html" class="signup-btn">Sign Up</a>
+        </div>
+      </nav>
+  </header>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <canvas></canvas>
+    </div>
+    <div class="content-container">
+        <h1>Login</h1>
+        <form>
+            <input type="text" placeholder="Enter your username"> 
+            <br>
+            <input type="password" placeholder="Enter your password">
+            <br>
+            <br>
+            <input id="terms" type="checkbox"> I agree to the terms and conditions
+            <button>Login</button> 
+            <br> 
+            <div class="social-login">
+                <button class="google-btn">Sign in with Google</button>
+                <button class="github-btn">Sign in with GitHub</button>
+            </div>
+            <p>Don't have an account? <a href="signup.html">Signup</a></p> 
+            <p>Forgot password? <a href="forgot.html">Click here</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

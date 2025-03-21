@@ -1,0 +1,30 @@
+To complete the herbal medicines page, you'll need the following placeholder images:
+
+1. herbal-background.jpg - A background image for the hero section with herbs or plants
+2. ginger-tea.jpg - Image of ginger tea or ginger root
+3. chamomile-tea.jpg - Image of chamomile tea or chamomile flowers
+4. turmeric-oil.jpg - Image of turmeric oil or turmeric roots/powder
+5. thyme-tea.jpg - Image of thyme tea or thyme herbs
+6. ashwagandha-tincture.jpg - Image of ashwagandha tincture or ashwagandha plant
+7. calendula-oil.jpg - Image of calendula oil or calendula flowers
+8. triphala-powder.jpg - Image of triphala powder or its component herbs
+9. yarrow-compress.jpg - Image of yarrow plant or yarrow compress
+10. herbal-safety.jpg - Image showing safe herbal preparation
+
+For preparation method tutorials, you might want to add images of:
+- Tea preparation process
+- Tincture making process
+- Herbal oil infusion
+- Powder preparation
+- Compress/poultice application
+- Decoction preparation
+
+You can either:
+1. Use your own images if available
+2. Download royalty-free images from stock photo websites 
+3. Create image placeholders using a service like https://placeholder.com/
+
+For example, a 300x200 placeholder can be linked as:
+<img src="https://via.placeholder.com/300x200" alt="Placeholder">
+
+Remember to update the image paths in the HTML file once you have the actual images. 

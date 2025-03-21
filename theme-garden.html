@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Based Gardens - HerbspHere</title>
+    <link rel="stylesheet" href="herbalgarden.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="plant library.html">Plant Library</a>
+            <a href="expert.html">Expert Advice</a>
+            <a href="VR.html">HerbVerse</a>
+            <a href="herbalgarden.html" class="active">Herbal Garden</a>
+            <a href="herbal-medicines.html">Herbal Medicines</a>
+            <a href="#faq">FAQs</a>
+            
+            <div class="auth-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="points-display">
+            <div class="points-icon">🏆</div>
+            <div class="points-value" id="user-points">0 points</div>
+            <button class="achievements-btn" onclick="showAchievements()">Achievements</button>
+        </div>
+        
+        <a href="herbalgarden.html" class="back-button back-btn">← Back to Garden Menu</a>
+        
+        <h1 class="title">THEME BASED GARDENS</h1>
+        <p>Use your points to unlock beautiful garden themes or continue with free options</p>
+        
+        <div class="garden-themes">
+            <div class="theme-card">
+                <div class="theme-badge new-badge">NEW</div>
+                <div class="theme-image">
+                    <img src="ahf.jpg" alt="Ayurvedic Garden">
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name">AYURVEDIC GARDEN</h3>
+                    <p class="theme-description">Traditional Ayurvedic herbs arranged in a mandala pattern. Perfect for medicinal herb cultivation.</p>
+                    <div class="trophy-indicator">Popular choice</div>
+                    <div class="theme-unlock">
+                        <span class="points-required">Free</span>
+                        <button class="use-theme-btn" onclick="useTheme('ayurvedic')">Use This Theme</button>
+                        <a href="ayurvedic-3d-garden.html" class="use-theme-btn" style="margin-left: 5px;">3D Experience</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-card">
+                <div class="theme-image">
+                    <img src="garden.jpg" alt="Zen Garden">
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name">ZEN GARDEN</h3>
+                    <p class="theme-description">Peaceful Japanese-inspired layout with balanced herb placement and tranquil elements.</p>
+                    <div class="theme-unlock">
+                        <span class="points-required">100 points required</span>
+                        <button class="locked-indicator" id="zen-garden-btn">Locked</button>
+                        <a href="zen-3d-garden.html" class="use-theme-btn" style="margin-left: 5px;">3D Experience</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-card">
+                <div class="theme-badge premium-badge">PREMIUM</div>
+                <div class="theme-image">
+                    <img src="hb1.jpg" alt="Fairy Garden">
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name">FAIRY GARDEN</h3>
+                    <p class="theme-description">Whimsical garden with miniature decorative elements among the healing herbs.</p>
+                    <div class="theme-unlock">
+                        <span class="points-required">250 points required</span>
+                        <button class="locked-indicator" id="fairy-garden-btn">Locked</button>
+                        <a href="fairy-3d-garden.html" class="use-theme-btn" style="margin-left: 5px;">3D Experience</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="theme-card">
+                <div class="theme-image">
+                    <img src="Tulsi.jpg" alt="Desert Oasis">
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name">DESERT OASIS</h3>
+                    <p class="theme-description">Heat-tolerant medicinal herbs arranged around a central water feature.</p>
+                    <div class="theme-unlock">
+                        <span class="points-required">150 points required</span>
+                        <button class="locked-indicator" id="desert-garden-btn">Locked</button>
+                        <a href="desert-3d-garden.html" class="use-theme-btn" style="margin-left: 5px;">3D Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load user points from localStorage
+        let userPoints = localStorage.getItem('herbspointSystem') ? 
+            JSON.parse(localStorage.getItem('herbspointSystem')).total : 0;
+            
+        // Update points display
+        document.getElementById('user-points').textContent = `${userPoints} points`;
+        
+        // Check unlockable themes
+        function checkUnlockableThemes() {
+            // Zen Garden (100 points)
+            if (userPoints >= 100) {
+                const zenBtn = document.getElementById('zen-garden-btn');
+                zenBtn.textContent = "Unlock";
+                zenBtn.className = "unlock-btn";
+                zenBtn.onclick = function() { unlockTheme('zen', 100); };
+            }
+            
+            // Desert Oasis (150 points)
+            if (userPoints >= 150) {
+                const desertBtn = document.getElementById('desert-garden-btn');
+                desertBtn.textContent = "Unlock";
+                desertBtn.className = "unlock-btn";
+                desertBtn.onclick = function() { unlockTheme('desert', 150); };
+            }
+            
+            // Fairy Garden (250 points)
+            if (userPoints >= 250) {
+                const fairyBtn = document.getElementById('fairy-garden-btn');
+                fairyBtn.textContent = "Unlock";
+                fairyBtn.className = "unlock-btn";
+                fairyBtn.onclick = function() { unlockTheme('fairy', 250); };
+            }
+        }
+        
+        // Unlock a theme
+        function unlockTheme(themeId, pointCost) {
+            // Deduct points
+            userPoints -= pointCost;
+            
+            // Save to localStorage
+            let pointSystem = JSON.parse(localStorage.getItem('herbspointSystem') || '{"total":0,"plants":{},"achievements":[]}');
+            pointSystem.total = userPoints;
+            localStorage.setItem('herbspointSystem', JSON.stringify(pointSystem));
+            
+            // Update points display
+            document.getElementById('user-points').textContent = `${userPoints} points`;
+            
+            // Save unlocked theme
+            let unlockedThemes = JSON.parse(localStorage.getItem('unlockedThemes') || '[]');
+            unlockedThemes.push(themeId);
+            localStorage.setItem('unlockedThemes', JSON.stringify(unlockedThemes));
+            
+            // Update button
+            const btn = document.getElementById(`${themeId}-garden-btn`);
+            btn.textContent = "Use This Theme";
+            btn.className = "use-theme-btn";
+            btn.onclick = function() { useTheme(themeId); };
+            
+            // Show notification
+            alert(`You've unlocked the ${themeId.toUpperCase()} GARDEN theme!`);
+        }
+        
+        // Use a theme
+        function useTheme(themeId) {
+            // Save selected theme
+            localStorage.setItem('selectedTheme', themeId);
+            
+            // Redirect to garden
+            window.location.href = 'mygarden.html';
+        }
+        
+        // Show achievements panel
+        function showAchievements() {
+            window.location.href = 'mygarden.html?showAchievements=true';
+        }
+        
+        // Check unlockable themes on page load
+        window.onload = function() {
+            checkUnlockableThemes();
+            
+            // Check already unlocked themes
+            let unlockedThemes = JSON.parse(localStorage.getItem('unlockedThemes') || '[]');
+            unlockedThemes.forEach(themeId => {
+                const btn = document.getElementById(`${themeId}-garden-btn`);
+                if (btn) {
+                    btn.textContent = "Use This Theme";
+                    btn.className = "use-theme-btn";
+                    btn.onclick = function() { useTheme(themeId); };
+                }
+            });
+        };
+    </script>
+</body>
+</html> 

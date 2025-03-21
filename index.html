@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="GlitchText.css">
+    
+    <!-- Preload slider images -->
+    <link rel="preload" href="fav.jpg" as="image">
+    <link rel="preload" href="Herb.jpg" as="image">
+    <link rel="preload" href="garden.jpg" as="image">
+    <link rel="preload" href="COMM.jpg" as="image">
+    <link rel="preload" href="FAQ.jpg" as="image">
+    <link rel="preload" href="FEED.jpg" as="image">
+    
+    <title>HerbspHere - Interactive Herbal Garden</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="GlitchText.js"></script>
+</head>
+<body>
+    <script> window.chtlConfig = { chatbotId: "3372489535" } </script>
+    <script async data-id="3372489535" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <header>
+        <button class="hamburger" id="hamburger-menu">☰</button>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links" id="nav-menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="plant library.html">Plant Library</a>
+          <a href="expert.html">Expert Advice</a>
+          <a href="VR.html"><span data-text="HerbVerse">HerbVerse</span></a>
+          <a href="herbalgarden.html"><span data-text="Herbal Garden">Herbal Garden</span></a>
+          <a href="herbal-medicines.html">Herbal Medicines</a>
+          <a href="#faq">FAQs</a>
+          <div class="auth-container">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+          </div>
+        </nav>
+    </header>
+
+<!-- Existing Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the Virtual Herbal Garden</h1>
+        <!-- Existing search bar -->
+    </div>
+</section>
+
+<!-- Add Intro Section -->
+<section id="intro">
+    <h2>Discover the Healing Power of Nature</h2>
+    <p>Welcome to HerbspHere, your immersive portal to the world of medicinal plants used in traditional AYUSH systems. Explore our interactive 3D models, learn about their healing properties, and discover how these natural remedies have been used for centuries to promote wellness and health.</p>
+    <p>Our virtual herbal garden brings ancient wisdom to modern technology, allowing you to identify, learn about, and understand the application of medicinal herbs from the comfort of your home.</p>
+</section>
+
+<main>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="fav.jpg" alt="Clove" loading="eager" class="slide active" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load fav.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="plant library.html" style="color: white; text-decoration: none;">Discover Rare Medicinal Plants</a></div>
+        </div>
+    </div>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="Herb.jpg" alt="3D Image" class="slide" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load Herb.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="VR.html" style="color: white; text-decoration: none;">Explore 3D Plant Models</a></div>
+        </div>
+    </div>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="garden.jpg" alt="Garden" class="slide" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load garden.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="herbalgarden.html" style="color: white; text-decoration: none;">Virtual Garden Tours</a></div>
+        </div>
+    </div>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="COMM.jpg" alt="Community" class="slide" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load COMM.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="#expert" style="color: white; text-decoration: none;">Community</a></div>
+        </div>
+    </div>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="FAQ.jpg" alt="FAQs" class="slide" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load FAQ.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="#faq" style="color: white; text-decoration: none;">FAQs</a></div>
+        </div>
+    </div>
+    <div class="slide-container" style="background-color: rgba(46, 125, 50, 0.2);">
+        <img src="FEED.jpg" alt="Feedback" class="slide" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" onerror="this.onerror=null; this.parentNode.style.backgroundColor='rgba(46, 125, 50, 0.2)'; console.error('Failed to load FEED.jpg');">
+        <div class="slide-caption">
+            <div class="caption-background"></div>
+            <div class="caption-text"><a href="#feedback" style="color: white; text-decoration: none;">Feedback</a></div>
+        </div>
+    </div>
+    
+    <div class="pagination-dots">
+        <!-- Dots will be added by JavaScript -->
+    </div>
+    
+    <div class="nav">
+        <button id="prev-button" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+        </button>
+        <button id="next-button" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+            </svg>
+        </button>
+    </div>
+</main>
+
+<!-- New AI Plant Recognition Section -->
+<section class="ai-recognition" id="ai-recognition">
+    <h2>AI-Powered Plant Recognition</h2>
+    <div class="ai-recognition-container">
+        <div class="camera-section">
+            <div class="camera-preview" id="camera-preview">
+                <div class="camera-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <p>Point your camera at a medicinal plant to instantly identify it</p>
+                    <p><small>Our AI will analyze and provide detailed information about the plant</small></p>
+                </div>
+                <video id="video-preview" autoplay playsinline style="display:none;"></video>
+            </div>
+            <div class="ai-button-container">
+                <button id="start-camera" class="ai-button">
+                    <i class="fas fa-video"></i> Start Camera
+                </button>
+                <button id="capture-photo" class="ai-button" style="display:none;">
+                    <i class="fas fa-search"></i> Identify Plant
+                </button>
+                <button id="upload-photo" class="ai-button">
+                    <i class="fas fa-upload"></i> Upload Photo
+                </button>
+                <input type="file" id="photo-upload" accept="image/*" style="display:none;">
+            </div>
+        </div>
+        <div class="ai-results" id="ai-results">
+            <div class="result-placeholder">
+                <p>Plant identification results will appear here</p>
+            </div>
+            <div class="plant-result" style="display:none;">
+                <div class="plant-identification">
+                    <h3 id="identified-plant">Plant Name</h3>
+                    <p id="confidence">Confidence: 0%</p>
+                </div>
+                <div class="plant-details">
+                    <p id="plant-description"></p>
+                    <div class="medicinal-properties">
+                        <h4>Medicinal Properties:</h4>
+                        <ul id="medicinal-list"></ul>
+                    </div>
+                    <a id="view-in-library" class="view-link">View in Plant Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Expert Advice Section -->
+<section class="expert-advice" id="expert">
+    <div class="section-heading">
+        <h2>Expert Ayurvedic Guidance</h2>
+        <p class="section-description">Explore our wide range of herbal expertise and resources tailored to your wellness journey</p>
+    </div>
+    <div class="expert-grid">
+        <div class="expert-card" onclick="location.href='plant library.html#advanced-filter'">
+            <div class="card-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="card-content">
+                <h3>Find Your Plant</h3>
+                <p>Use our advanced search and filtering system to quickly find medicinal plants based on their properties, uses, or habitat.</p>
+                <button class="expert-btn"><i class="fas fa-search"></i> Start Searching</button>
+            </div>
+        </div>
+        <div class="expert-card" onclick="openRemedyFormulation()">
+            <div class="card-icon">
+                <i class="fas fa-prescription-bottle"></i>
+            </div>
+            <div class="card-content">
+                <h3>Remedy Formulation</h3>
+                <p>Create personalized herbal preparations based on your specific needs. Our AI analyzes your symptoms and suggests effective combinations.</p>
+                <button class="remedy-btn"><i class="fas fa-mortar-pestle"></i> Create Remedy</button>
+            </div>
+        </div>
+        <div class="expert-card" onclick="location.href='herbal-medicines.html'">
+            <div class="card-icon">
+                <i class="fas fa-flask"></i>
+            </div>
+            <div class="card-content">
+                <h3>Herbal Medicines</h3>
+                <p>Explore traditional herbal medicines and learn how to prepare them at home. Browse recipes with step-by-step tutorials.</p>
+                <button class="remedy-btn"><i class="fas fa-book-medical"></i> View Recipes</button>
+            </div>
+        </div>
+        <div class="expert-card" onclick="location.href='expert.html'">
+            <div class="card-icon">
+                <i class="fas fa-user-md"></i>
+            </div>
+            <div class="card-content">
+                <h3>Expert Consultation</h3>
+                <p>Connect with certified Ayurvedic practitioners for personalized advice on using medicinal herbs for your specific health concerns.</p>
+                <button class="expert-btn"><i class="fas fa-comments"></i> Consult Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New FAQ Section -->
+<section class="faq-section" id="faq" >
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>What is HerbspHere?</h3>
+            <p>HerbspHere is an interactive virtual herbal garden that helps users explore, learn, and engage with medicinal plants used in AYUSH. It offers a smart plant library, themed virtual gardens, and a gamified "My Garden" experience.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Who can use HerbspHere?</h3>
+            <p>HerbspHere is designed for students, researchers, herbal enthusiasts, and anyone interested in learning about medicinal plants. You don't need prior knowledge—our platform makes learning easy and interactive!</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is HerbspHere free to use?</h3>
+            <p>Yes! HerbspHere is completely free to explore, with future plans to introduce premium features for advanced learning and expert consultations.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How does the Virtual Herbal Garden work?</h3>
+            <p>The Virtual Herbal Garden is a themed digital space where plants are categorized based on their medicinal properties (e.g., immunity boosters, skincare herbs). Users can explore, hover, and click on plants to learn about their benefits.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I create my own garden?</h3>
+            <p>Yes! We are currently working on the "My Garden" feature which will allow users to customize and grow their own virtual collection of medicinal plants.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is My Garden a real gardening guide?</h3>
+            <p>While "My Garden" will be a virtual experience, it will also provide real gardening tips to help users grow medicinal plants at home.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I find a specific plant?</h3>
+            <p>Use our Smart Plant Library with advanced search filters: by name (Scientific, Common, or Regional), medicinal uses, plant part used, or region/climate suitability.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do I need to install anything?</h3>
+            <p>No! HerbspHere is a fully web-based platform that works without installation.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Will you add more plants and features?</h3>
+            <p>Absolutely! We're constantly expanding our plant database and adding new features like AI-powered plant recognition.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I give feedback?</h3>
+            <p>Use the Feedback & Support section on our website to share your thoughts or report any issues.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Will there be an AI plant identification tool?</h3>
+            <p>We're working on integrating an AI-based plant identification system for instant plant details from images.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I contribute plant data?</h3>
+            <p>Future plans include a user contribution feature for suggesting plants or providing verified information.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is there a community forum?</h3>
+            <p>We're working on adding a community forum for discussions about medicinal plants and herbal remedies.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Does HerbspHere provide expert advice?</h3>
+            <p>We're exploring partnerships with AYUSH practitioners to offer verified insights in the future.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Will HerbspHere remain free?</h3>
+            <p>Core features will always be free. Premium features may include personalized gardening advice and expert consultations.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I get started?</h3>
+            <p>Simply visit our website, sign up, and browse the Plant Library or explore the Virtual Garden.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How to search plants quickly?</h3>
+            <p>Use the advanced search bar in the Plant Library with multiple filter options.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I bookmark plants?</h3>
+            <p>Coming soon! A bookmark feature will let you save favorite plants for easy access.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Virtual Garden vs My Garden?</h3>
+            <p>• Virtual Garden: Pre-built themed gardens • My Garden: Personalized space to grow your own plant collection</p>
+        </div>
+        <div class="faq-item">
+            <h3>How accurate is the information?</h3>
+            <p>All data is sourced from authentic AYUSH guidelines and verified botanical research.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I learn home gardening?</h3>
+            <p>Yes! Each plant profile includes gardening tips about soil, water, sunlight, and seasonal care.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are there step-by-step guides?</h3>
+            <p>Yes! Our website includes guided tutorials for growing common medicinal plants.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How to report issues?</h3>
+            <p>Use the Feedback & Support section to report bugs or suggest improvements.</p>
+        </div>
+    </div>
+</section>
+
+<!-- New Feedback Section -->
+<section class="feedback-support" id="feedback">
+    <h2 class="h2">Support Center</h2>
+    <div class="feedback-options">
+        <div class="contact-form">
+            <h3 class="h2">Send us a Message</h3>
+            <form>
+                <textarea placeholder="Your message..."></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="support-info">
+            <h3>Quick Help</h3>
+            <p>Email: support@herbalhub.com</p>
+            <p>24/7 Chat Support Available</p>
+        </div>
+    </div>
+</section>
+
+<script src="home.js"></script>
+<script src="plant-recognition.js"></script>
+</body>
+</html>
+
+

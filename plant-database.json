@@ -1,0 +1,86 @@
+{
+    "tulsi": {
+        "scientificName": "Ocimum sanctum",
+        "description": "Holy Basil is a highly revered medicinal herb in Ayurveda.",
+        "medicinalProperties": [
+            "Anti-inflammatory",
+            "Anti-stress and adaptogenic",
+            "Immune system enhancer",
+            "Respiratory system support",
+            "Digestive aid"
+        ],
+        "url": "plant library.html#tulsi",
+        "region": "tropical",
+        "season": "year-round"
+    },
+    "ashwagandha": {
+        "scientificName": "Withania somnifera",
+        "description": "Known as Indian Ginseng, Ashwagandha is a cornerstone of Ayurvedic medicine.",
+        "medicinalProperties": [
+            "Stress reduction",
+            "Energy enhancement",
+            "Immune system support",
+            "Anti-inflammatory",
+            "Sleep improvement"
+        ],
+        "url": "plant library.html#ashwagandha",
+        "region": "arid",
+        "season": "year-round"
+    },
+    "turmeric": {
+        "scientificName": "Curcuma longa",
+        "description": "Turmeric is a powerful medicinal herb with active compound curcumin.",
+        "medicinalProperties": [
+            "Anti-inflammatory",
+            "Antioxidant",
+            "Joint health support",
+            "Digestive aid",
+            "Liver detoxification"
+        ],
+        "url": "plant library.html#turmeric",
+        "region": "tropical",
+        "season": "year-round"
+    },
+    "cinnamon": {
+        "scientificName": "Cinnamomum verum",
+        "description": "Cinnamon bark has been used medicinally for centuries in various traditional systems.",
+        "medicinalProperties": [
+            "Blood sugar regulation",
+            "Anti-inflammatory",
+            "Antimicrobial",
+            "Digestive aid",
+            "Heart health support"
+        ],
+        "url": "plant library.html#cinnamon",
+        "region": "tropical",
+        "season": "year-round"
+    },
+    "cardamom": {
+        "scientificName": "Elettaria cardamomum",
+        "description": "Known as the 'Queen of Spices', cardamom has both culinary and medicinal uses.",
+        "medicinalProperties": [
+            "Digestive aid",
+            "Breath freshener",
+            "Anti-inflammatory",
+            "Antioxidant",
+            "Respiratory support"
+        ],
+        "url": "plant library.html#cardamom",
+        "region": "subtropical",
+        "season": "year-round"
+    },
+    "clove": {
+        "scientificName": "Syzygium aromaticum",
+        "description": "Cloves have been used for their analgesic and antiseptic properties.",
+        "medicinalProperties": [
+            "Pain relief",
+            "Antimicrobial",
+            "Digestive aid",
+            "Anti-inflammatory",
+            "Respiratory support"
+        ],
+        "url": "plant library.html#clove",
+        "region": "tropical",
+        "season": "year-round"
+    }
+} 

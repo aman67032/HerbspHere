@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Advice - HerbspHere</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="expert.css">
+    <link rel="stylesheet" href="GlitchText.css">
+    <!-- JavaScript Files (defer loading until DOM is ready) -->
+    <script src="home.js" defer></script>
+    <script src="expert.js" defer></script>
+    <script src="GlitchText.js"></script>
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger-menu">☰</button>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="plant library.html">Plant Library</a>
+            <a href="expert.html" class="active">Expert Advice</a>
+            <a href="VR.html"><span data-text="HerbVerse">HerbVerse</span></a>
+            <a href="herbalgarden.html"><span data-text="Herbal Garden">Herbal Garden</span></a>
+            <a href="herbal-medicines.html">Herbal Medicines</a>
+            <a href="ayurvedic-3d-garden.html" class="special-nav-link">3D Ayurvedic Garden</a>
+            <a href="index.html#faq">FAQs</a>
+            <div class="auth-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="expert-container">
+        <section class="advice-hero">
+            <div class="section-heading">
+            <h1>Ayurvedic Expert Consultation</h1>
+                <p class="section-description">Connect with certified Ayurvedic practitioners for personalized herbal solutions tailored to your unique health needs</p>
+            </div>
+        </section>
+
+        <!-- New Herbal Knowledge Section -->
+        <section class="herbal-knowledge">
+            <div class="section-heading">
+                <h2>Herbal Wisdom & Knowledge</h2>
+                <p class="section-description">Discover the ancient wisdom of Ayurvedic medicine and its application in modern wellness</p>
+            </div>
+            
+            <div class="knowledge-cards">
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Ayurvedic Principles</h3>
+                    <p>Learn about the three doshas (Vata, Pitta, and Kapha) and how they influence your health, temperament, and well-being. Understanding your dosha can help you create balance in your life.</p>
+                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3>Herbal Preparations</h3>
+                    <p>Explore different methods of preparing herbal remedies, including infusions, decoctions, powders, and oils. Each preparation method extracts different properties from medicinal plants.</p>
+                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="knowledge-card">
+                    <div class="knowledge-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3>Therapeutic Applications</h3>
+                    <p>Discover how Ayurvedic herbs are used to address various health concerns, from digestive issues and stress to skin conditions and respiratory health.</p>
+                    <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultation-options">
+            <div class="consultation-card">
+                <div class="card-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h2>Video Consultation</h2>
+                <p>60-minute live session with an expert</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Personalized health assessment</li>
+                    <li><i class="fas fa-check-circle"></i> Herbal remedy formulation</li>
+                    <li><i class="fas fa-check-circle"></i> Follow-up plan included</li>
+                    <li><i class="fas fa-check-circle"></i> Digital report with recommendations</li>
+                </ul>
+                <div class="price-tag">₹299</div>
+                <button class="remedy-btn">Book Session</button>
+            </div>
+
+            <div class="consultation-card">
+                <div class="card-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h2>Plant Identification</h2>
+                <p>Get expert analysis of your medicinal plants</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Photo-based identification</li>
+                    <li><i class="fas fa-check-circle"></i> Cultivation guidance</li>
+                    <li><i class="fas fa-check-circle"></i> Usage recommendations</li>
+                    <li><i class="fas fa-check-circle"></i> Safety assessment</li>
+                </ul>
+                <div class="price-tag">₹149</div>
+                <button class="expert-btn" onclick="openPhotoUpload()">Submit Photos</button>
+            </div>
+
+            <div class="consultation-card">
+                <div class="card-icon">
+                    <i class="fas fa-prescription-bottle"></i>
+                </div>
+                <h2>Remedy Review</h2>
+                <p>Have your herbal preparations evaluated</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Dosage verification</li>
+                    <li><i class="fas fa-check-circle"></i> Safety assessment</li>
+                    <li><i class="fas fa-check-circle"></i> Optimization suggestions</li>
+                    <li><i class="fas fa-check-circle"></i> Detailed analysis report</li>
+                </ul>
+                <div class="price-tag">₹199</div>
+                <button class="remedy-btn" onclick="openRemedyReview()">Submit Remedy</button>
+            </div>
+        </section>
+
+        <!-- New Seasonal Wellness Tips Section -->
+        <section class="seasonal-tips">
+            <div class="section-heading">
+                <h2>Seasonal Wellness Guidance</h2>
+                <p class="section-description">Ayurvedic recommendations to maintain balance throughout the changing seasons</p>
+            </div>
+            
+            <div class="season-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-season="spring">Spring</button>
+                    <button class="tab-btn" data-season="summer">Summer</button>
+                    <button class="tab-btn" data-season="monsoon">Monsoon</button>
+                    <button class="tab-btn" data-season="autumn">Autumn</button>
+                    <button class="tab-btn" data-season="winter">Winter</button>
+                </div>
+                
+                <div class="season-content">
+                    <div class="season-panel active" id="spring-panel">
+                        <div class="season-info">
+                            <h3>Spring (Vasant Ritu)</h3>
+                            <p>Spring is characterized by increased Kapha dosha. As the earth thaws, there's increased moisture and heaviness in the environment.</p>
+                            
+                            <h4>Recommended Herbs:</h4>
+                            <ul class="herb-list">
+                                <li><strong>Ginger (Adrak)</strong> - Helps stimulate digestion and reduce mucus</li>
+                                <li><strong>Turmeric (Haldi)</strong> - Supports the immune system and reduces inflammation</li>
+                                <li><strong>Tulsi (Holy Basil)</strong> - Helps clear respiratory passages</li>
+                            </ul>
+                            
+                            <h4>Lifestyle Tips:</h4>
+                            <ul class="tips-list">
+                                <li>Wake up early and exercise regularly to counter Kapha's sluggish effects</li>
+                                <li>Favor warm, light, and slightly spicy foods</li>
+                                <li>Reduce dairy, sweets, and heavy foods</li>
+                                <li>Practice daily dry brushing (garshana) to stimulate lymphatic flow</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="season-panel" id="summer-panel">
+                        <div class="season-info">
+                            <h3>Summer (Grishma Ritu)</h3>
+                            <p>Summer increases Pitta dosha, bringing heat, intensity, and sharpness to the body and mind.</p>
+                            
+                            <h4>Recommended Herbs:</h4>
+                            <ul class="herb-list">
+                                <li><strong>Mint (Pudina)</strong> - Cooling effect on the body</li>
+                                <li><strong>Coriander (Dhania)</strong> - Reduces internal heat</li>
+                                <li><strong>Fennel (Saunf)</strong> - Soothes the digestive system</li>
+                            </ul>
+                            
+                            <h4>Lifestyle Tips:</h4>
+                            <ul class="tips-list">
+                                <li>Stay hydrated with cooling drinks like coconut water and mint tea</li>
+                                <li>Favor sweet, bitter, and astringent tastes</li>
+                                <li>Reduce spicy, sour, and salty foods</li>
+                                <li>Schedule outdoor activities in the cooler parts of the day</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional season panels will be hidden by CSS -->
+                    <div class="season-panel" id="monsoon-panel">
+                        <!-- Monsoon content -->
+                    </div>
+                    <div class="season-panel" id="autumn-panel">
+                        <!-- Autumn content -->
+                    </div>
+                    <div class="season-panel" id="winter-panel">
+                        <!-- Winter content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-experts">
+            <div class="section-heading">
+            <h2>Our Ayurvedic Specialists</h2>
+                <p class="section-description">Meet our team of certified Ayurvedic doctors and herbalists with years of experience</p>
+            </div>
+            
+            <div class="experts-grid">
+            <div class="expert-profile">
+                    <div class="expert-image-container">
+                        <img src="https://via.placeholder.com/150x150" alt="Dr. Anika Patel" class="expert-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="expert-availability">Available Today</div>
+                    </div>
+                <div class="expert-info">
+                    <h3>Dr. Anika Patel</h3>
+                        <p class="expert-credentials">MD Ayurveda, 15+ years experience</p>
+                        <p class="expert-specialty">Specialization: Herbal Formulations</p>
+                    <div class="expert-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                            <span>4.9/5 (243 consultations)</span>
+                        </div>
+                        <p class="expert-bio">Dr. Patel specializes in creating personalized herbal formulations for chronic conditions, with expertise in digestive and respiratory health.</p>
+                        <button class="expert-btn">Book Consultation</button>
+                    </div>
+                </div>
+                
+                <div class="expert-profile">
+                    <div class="expert-image-container">
+                        <img src="https://via.placeholder.com/150x150" alt="Dr. Rajesh Kumar" class="expert-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="expert-availability">Next Available: Tomorrow</div>
+                    </div>
+                    <div class="expert-info">
+                        <h3>Dr. Rajesh Kumar</h3>
+                        <p class="expert-credentials">Ph.D in Ayurvedic Sciences, 10+ years experience</p>
+                        <p class="expert-specialty">Specialization: Stress Management & Immunity</p>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0/5 (187 consultations)</span>
+                        </div>
+                        <p class="expert-bio">Dr. Kumar combines traditional Ayurvedic principles with modern research to develop immunity-boosting and stress-reduction herbal protocols.</p>
+                        <button class="expert-btn">Book Consultation</button>
+                    </div>
+                </div>
+                
+                <div class="expert-profile">
+                    <div class="expert-image-container">
+                        <img src="https://via.placeholder.com/150x150" alt="Dr. Meena Sharma" class="expert-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="expert-availability">Available Today</div>
+                    </div>
+                    <div class="expert-info">
+                        <h3>Dr. Meena Sharma</h3>
+                        <p class="expert-credentials">BAMS, Certified Herbalist, 8+ years experience</p>
+                        <p class="expert-specialty">Specialization: Women's Health & Skin Conditions</p>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.7/5 (156 consultations)</span>
+                        </div>
+                        <p class="expert-bio">Dr. Sharma specializes in treating hormonal imbalances and skin conditions using holistic Ayurvedic approaches and personalized herbal formulations.</p>
+                        <button class="expert-btn">Book Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Herbal First Aid Section -->
+        <section class="herbal-first-aid">
+            <div class="section-heading">
+                <h2>Herbal First Aid Guide</h2>
+                <p class="section-description">Simple herbal remedies for common minor ailments and discomforts</p>
+            </div>
+            
+            <div class="first-aid-grid">
+                <div class="first-aid-item">
+                    <h3><i class="fas fa-head-side-cough"></i> Cough & Cold</h3>
+                    <div class="remedy-info">
+                        <p><strong>Quick Remedy:</strong> Ginger, honey, and tulsi tea. Boil fresh ginger and tulsi leaves for 5 minutes, strain, and add honey once cooled slightly.</p>
+                        <p><strong>How it helps:</strong> Ginger is warming and expectorant, tulsi has antiviral properties, and honey soothes throat irritation.</p>
+                    </div>
+                </div>
+                
+                <div class="first-aid-item">
+                    <h3><i class="fas fa-head-side-virus"></i> Headache</h3>
+                    <div class="remedy-info">
+                        <p><strong>Quick Remedy:</strong> Peppermint oil temple massage or coriander seed tea. For the tea, steep 1 teaspoon of crushed coriander seeds in hot water for 10 minutes.</p>
+                        <p><strong>How it helps:</strong> Peppermint provides cooling relief while coriander seeds help regulate circulation to the head.</p>
+                    </div>
+                </div>
+                
+                <div class="first-aid-item">
+                    <h3><i class="fas fa-stomach"></i> Digestive Discomfort</h3>
+                    <div class="remedy-info">
+                        <p><strong>Quick Remedy:</strong> Fennel and cumin seed tea. Mix equal parts of both seeds, lightly crush, and steep in hot water for 10 minutes.</p>
+                        <p><strong>How it helps:</strong> This combination reduces bloating, gas, and improves overall digestive function naturally.</p>
+                    </div>
+                </div>
+                
+                <div class="first-aid-item">
+                    <h3><i class="fas fa-allergies"></i> Skin Irritation</h3>
+                    <div class="remedy-info">
+                        <p><strong>Quick Remedy:</strong> Aloe vera gel mixed with a few drops of lavender essential oil, applied topically.</p>
+                        <p><strong>How it helps:</strong> Aloe vera cools and soothes irritated skin, while lavender has anti-inflammatory and antimicrobial properties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-form">
+            <div class="section-heading">
+                <h2>Schedule Your Consultation</h2>
+                <p class="section-description">Fill out the form below to request a consultation with one of our experts</p>
+            </div>
+            <form id="consultation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="1" max="120">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="consultation-type">Consultation Type</label>
+                        <select id="consultation-type" required>
+                            <option value="">Select an option</option>
+                            <option value="video">Video Consultation</option>
+                            <option value="plant">Plant Identification</option>
+                            <option value="remedy">Remedy Review</option>
+                        </select>
+                    </div>
+                <div class="form-group">
+                        <label for="expert">Preferred Expert (Optional)</label>
+                        <select id="expert">
+                            <option value="">No preference</option>
+                            <option value="anika">Dr. Anika Patel</option>
+                            <option value="rajesh">Dr. Rajesh Kumar</option>
+                            <option value="meena">Dr. Meena Sharma</option>
+                    </select>
+                </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" required>
+                            <option value="">Select a time slot</option>
+                            <option value="9">9:00 AM - 10:00 AM</option>
+                            <option value="11">11:00 AM - 12:00 PM</option>
+                            <option value="14">2:00 PM - 3:00 PM</option>
+                            <option value="16">4:00 PM - 5:00 PM</option>
+                            <option value="18">6:00 PM - 7:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="concerns">Health Concerns / Questions</label>
+                    <textarea id="concerns" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the terms and conditions and understand that this is not a replacement for professional medical care</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="remedy-btn">Request Appointment</button>
+            </form>
+        </section>
+
+        <section class="testimonials">
+            <div class="section-heading">
+                <h2>What Our Clients Say</h2>
+                <p class="section-description">Read about the experiences of people who have consulted with our Ayurvedic experts</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The expert guidance I received from Dr. Patel helped me create effective herbal remedies for my family's health needs. Her personalized approach made all the difference!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Rajesh Kumar" class="author-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Video Consultation, 3 months ago</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"I had been struggling with digestive issues for years. Dr. Kumar's Ayurvedic approach and herbal recommendations have made a tremendous improvement in my overall health and wellbeing."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Priya Sharma" class="author-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Video Consultation, 1 month ago</p>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Dr. Sharma identified plants in my garden that I didn't know had medicinal properties. Her guidance on cultivation and usage has been invaluable for my family's natural healthcare approach."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Arjun Mehta" class="author-image" onerror="this.src='herb-pattern-bg.jpg'">
+                        <div class="author-info">
+                            <h4>Arjun Mehta</h4>
+                            <p>Plant Identification, 2 months ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots"></div>
+                <button id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-description">Find answers to common questions about our expert consultation services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> How do I prepare for a consultation?</h3>
+                    <div class="faq-answer">
+                        <p>To make the most of your consultation, please have your medical history, current medications, and any recent test results ready. Also write down your specific concerns and questions in advance. If possible, take photos of any plants or herbal preparations you want to discuss.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> What happens during a video consultation?</h3>
+                    <div class="faq-answer">
+                        <p>During the 60-minute video session, the expert will first discuss your health history and concerns. They will then perform an assessment based on Ayurvedic principles, recommend appropriate herbal remedies, and provide guidance on lifestyle modifications. You'll receive a follow-up email with a summary of recommendations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> How many photos should I submit for plant identification?</h3>
+                    <div class="faq-answer">
+                        <p>For accurate identification, please submit 3-5 clear photos of each plant showing different parts: whole plant, leaves, flowers/fruits, and stem. Include close-ups of distinctive features and indicate the plant's size, habitat, and any notable characteristics like smell.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> Are these consultations a replacement for medical care?</h3>
+                    <div class="faq-answer">
+                        <p>No, our expert consultations are complementary to, not a replacement for, conventional medical care. Our Ayurvedic practitioners provide guidance on traditional herbal remedies and practices, but you should continue working with your primary healthcare provider, especially for serious conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> What is your cancellation policy?</h3>
+                    <div class="faq-answer">
+                        <p>You can reschedule or cancel your appointment up to 24 hours before the scheduled time without any charge. For cancellations less than 24 hours in advance, a 50% fee will apply. No-shows will be charged the full consultation fee.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <h3><i class="fas fa-plus"></i> How soon will I receive my plant identification or remedy review?</h3>
+                    <div class="faq-answer">
+                        <p>Plant identifications and remedy reviews are typically completed within 48-72 hours of submission. For urgent requests, please indicate this in your submission and we will do our best to expedite the process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>HerbspHere</h3>
+                <p>Your digital gateway to the world of medicinal plants and Ayurvedic wisdom.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="plant library.html">Plant Library</a></li>
+                    <li><a href="expert.html">Expert Advice</a></li>
+                    <li><a href="VR.html">HerbVerse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HerbspHere. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Virtual Garden</title>
+    <link rel="stylesheet" href="garden.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="plant library.html">Plant Library</a>
+          <a href="expert.html">Expert Advice</a>
+          <a href="VR.html">HerbVerse</a>
+          <a href="herbalgarden.html">Herbal Garden</a>
+          <a href="herbal-medicines.html">Herbal Medicines</a>
+          <a href="#faq">FAQs</a>
+          
+          <div class="auth-container">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+          </div>
+        </nav>
+    </header>
+
+    <h1>Grow Your Herb</h1>
+    <div class="garden-container">
+        <select id="herb-select">
+            <option value="tulsi">Tulsi</option>
+            <option value="ashwagandha">Ashwagandha</option>
+            <option value="turmeric">Turmeric</option>
+            <option value="cinnamon">Cinnamon</option>
+            <option value="cardamom">Cardamom</option>
+            <option value="clove">Clove</option>
+        </select>
+        <button onclick="startGrowing()">Plant Herb</button>
+        <div id="field" class="field"></div>
+        <div id="instructions" class="instructions"></div>
+        <div id="feedback" class="feedback"></div>
+        
+        <div class="back-button-container">
+            <a href="herbalgarden.html" class="back-button">Back to Garden Menu</a>
+            <a href="theme-garden.html" class="back-button">Choose Garden Theme</a>
+        </div>
+    </div>
+
+    <!-- Hidden preloaded images for tools -->
+    <div style="display: none;">
+        <img src="Tulsi.jpg" alt="Tulsi" id="preload-tulsi">
+        <img src="Ashwagandha.jpg" alt="Ashwagandha" id="preload-ashwagandha">
+        <img src="turmeric.jpg" alt="Turmeric" id="preload-turmeric">
+        <img src="cinnamon.jpg" alt="Cinnamon" id="preload-cinnamon">
+        <img src="Cardamom.jpg" alt="Cardamom" id="preload-cardamom">
+        <img src="clove.jpg" alt="Clove" id="preload-clove">
+    </div>
+
+    <script src="mygarden.js"></script>
+</body>
+</html>

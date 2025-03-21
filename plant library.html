@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="GlitchText.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+    <script src="GlitchText.js"></script>
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger-menu">☰</button>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="plant library.html" class="active">Plant Library</a>
+            <a href="expert.html">Expert Advice</a>
+            <a href="VR.html"><span data-text="HerbVerse">HerbVerse</span></a>
+            <a href="herbalgarden.html"><span data-text="Herbal Garden">Herbal Garden</span></a>
+            <a href="herbal-medicines.html">Herbal Medicines</a>
+            <a href="#faq">FAQs</a>
+            <div class="auth-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Welcome to the Plant Library</h2>
+            <p>The AYUSH sector relies heavily on medicinal plants and herbs, which form the backbone of traditional healing practices. Our Virtual Herbal Garden allows you to explore these plants from the comfort of your home.</p>
+
+        </section>
+
+        <section id="plants-controls">
+            <div class="controls-header">
+                <button id="filterBtn" class="stunning-filter-btn">
+                    <span class="filter-icon">⨁</span> Advanced Filters
+                    <span class="filter-badge">0</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="plants">
+            
+<div id="tulsi" class="model-container" 
+                 data-medicinal="anti-inflammatory,anti-viral,antioxidant"
+                 data-decision="skin-care,respiratory-care"
+                 data-region="tropical"
+                 data-growth="shrub"><model-viewer src="tulsi.glb" alt="Tulsi" auto-rotate camera-controls></model-viewer>
+                
+                <div class="plant-info">
+                    <div class="front">
+                        <div class="plant-image-container">
+                            <img src="Tulsi.jpg" alt="Tulsi Plant">
+                        </div>
+                        <h3>Tulsi (Ocimum sanctum)</h3>
+                        <p><strong>Common Names:</strong> Holy Basil, Sacred Basil</p>
+                        <p><strong>Habitat:</strong> Native to India, commonly found in gardens.</p>
+                        <p><strong>Medicinal Uses:</strong> Known for its anti-inflammatory, anti-viral, and antioxidant properties.</p>
+                        <p><strong>Cultivation:</strong> Prefers warm climates and well-drained soil. Grows well in pots or garden beds.</p>
+                        <br>
+                        <p><strong>Traditional Use:</strong> Sacred plant in Hinduism, used in rituals and as a daily tonic for overall wellness.</p>
+                        <a href="javascript:void(0)" onclick="showPlantDetails('tulsi')" class="Learn_More">Enhance Your Knowledge Further</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Ashwagandha -->
+            <div id="ashwagandha" class="model-container"
+                 data-medicinal="stress-relief,immunity-booster"
+                 data-decision="stress-management,energy-boost"
+                 data-region="arid"
+                 data-growth="shrub"><model-viewer src="Ahwagandha.glb" alt="Ashwagandha" auto-rotate camera-controls></model-viewer>
+                <div class="plant-info">
+                   <div class="front">
+                    <div class="plant-image-container">
+                        <img src="Ashwagandha.jpg" alt="Ashwagandha Plant">
+                    </div>
+                    <h3>Ashwagandha (Withania somnifera)</h3>
+                    <p><strong>Common Names:</strong> Indian Ginseng, Winter Cherry</p>
+                    <p><strong>Habitat:</strong> Native to India, grows well in arid regions.</p>
+                    <p><strong>Medicinal Uses:</strong> Adaptogen, helps reduce stress and anxiety, boosts immunity.</p>
+                    <p><strong>Cultivation:</strong> Prefers dry, well-drained soil and full sunlight.</p>
+                    <p><strong>Traditional Use:</strong> Used in Ayurveda as a Rasayana (rejuvenator) to increase vitality and longevity.</p>
+                    <a href="javascript:void(0)" onclick="showPlantDetails('ashwagandha')" class="Learn_More">Enhance Your Knowledge Further</a>
+                </div>
+                </div>
+            </div>
+        
+            <!-- Turmeric -->
+            <div id="turmeric" class="model-container"
+                 data-medicinal="anti-inflammatory,digestive,antioxidant"
+                 data-decision="digestive-care,skin-care"
+                 data-region="tropical"
+                 data-growth="herb"><model-viewer src="Turmeric.glb" alt="Turmeric" auto-rotate camera-controls></model-viewer>
+                <div class="plant-info">
+                   <div class="front">
+                    <div class="plant-image-container">
+                        <img src="turmeric.jpg" alt="Turmeric Plant">
+                    </div>
+                    <h3>Turmeric (Curcuma longa)</h3>
+                    <p><strong>Common Names:</strong> Haldi, Indian Saffron</p>
+                    <p><strong>Habitat:</strong> Native to Southeast Asia, requires a warm, humid climate.</p>
+                    <p><strong>Medicinal Uses:</strong> Anti-inflammatory, antioxidant, used in digestive health.</p>
+                    <p><strong>Cultivation:</strong> Grows in rich, well-drained soil with ample rainfall.</p>
+                    <p><strong>Traditional Use:</strong> Main ingredient in traditional remedies for inflammation, wound healing, and digestive disorders.</p>
+                    <a href="javascript:void(0)" onclick="showPlantDetails('turmeric')" class="Learn_More">Enhance Your Knowledge Further</a>
+                   </div>
+                </div>
+            </div>
+        
+            <!-- Cinnamon -->
+            <div id="cinnamon" class="model-container"
+                 data-medicinal="blood-sugar-regulation,anti-inflammatory"
+                 data-decision="metabolic-health,digestive-care"
+                 data-region="tropical"
+                 data-growth="tree"><model-viewer src="Cinnamon.glb" alt="Cinnamon" auto-rotate camera-controls></model-viewer>
+                <div class="plant-info">
+                   <div class="front"> 
+                    <div class="plant-image-container">
+                        <img src="cinnamon.jpg" alt="Cinnamon Plant">
+                    </div>
+                    <h3>Cinnamon (Cinnamomum verum)</h3>
+                    <p><strong>Common Names:</strong> Ceylon Cinnamon, True Cinnamon</p>
+                    <p><strong>Habitat:</strong> Native to Sri Lanka, thrives in tropical climates.</p>
+                    <p><strong>Medicinal Uses:</strong> Helps regulate blood sugar levels, has anti-inflammatory properties.</p>
+                    <p><strong>Cultivation:</strong> Prefers warm, humid environments with well-drained soil.</p>
+                    <p><strong>Traditional Use:</strong> Used in Ayurvedic medicine for thousands of years to treat respiratory and digestive ailments.</p>
+                    <a href="javascript:void(0)" onclick="showPlantDetails('cinnamon')" class="Learn_More">Enhance Your Knowledge Further</a>
+                   </div>
+                </div>
+            </div>
+        
+            <!-- Cardamom -->
+            <div id="cardamom" class="model-container"
+                 data-medicinal="digestive,antimicrobial"
+                 data-decision="digestive-care,respiratory-care"
+                 data-region="subtropical"
+                 data-growth="herb"><model-viewer src="Cardamom.glb" alt="Cardamom" auto-rotate camera-controls></model-viewer>
+                <div class="plant-info">
+                   <div class="front">
+                    <div class="plant-image-container">
+                        <img src="Cardamom.jpg" alt="Cardamom Plant">
+                    </div>
+                    <h3>Cardamom (Elettaria cardamomum)</h3>
+                    <p><strong>Common Names:</strong> True Cardamom</p>
+                    <p><strong>Habitat:</strong> Native to India, grows in tropical and subtropical climates.</p>
+                    <p><strong>Medicinal Uses:</strong> Supports digestive health, has antimicrobial properties.</p>
+                    <p><strong>Cultivation:</strong> Requires a moist, tropical climate and well-drained soil.</p>
+                    <p><strong>Traditional Use:</strong> Used in Ayurveda and Unani medicine for digestive disorders, respiratory infections, and oral health.</p>
+                    <a href="javascript:void(0)" onclick="showPlantDetails('cardamom')" class="Learn_More">Enhance Your Knowledge Further</a>
+                  </div>
+                </div>
+            </div>
+        
+            <!-- Clove -->
+            <div id="clove" class="model-container"
+                 data-medicinal="pain-relief,antibacterial,antioxidant"
+                 data-decision="dental-care,respiratory-care"
+                 data-region="tropical"
+                 data-growth="tree"><model-viewer src="clove.glb" alt="Clove" auto-rotate camera-controls></model-viewer>
+                <div class="plant-info">
+                  <div class="front">
+                    <div class="plant-image-container">
+                        <img src="clove.jpg" alt="Clove Plant">
+                    </div>
+                    <h3>Clove (Syzygium aromaticum)</h3>
+                    <p><strong>Common Names:</strong> Clove Buds</p>
+                    <p><strong>Habitat:</strong> Native to Indonesia, thrives in tropical climates.</p>
+                    <p><strong>Medicinal Uses:</strong> Used for pain relief, has antibacterial and antioxidant properties.</p>
+                    <p><strong>Cultivation:</strong> Prefers warm, humid conditions with rich, well-drained soil.</p>
+                    <p><strong>Traditional Use:</strong> Common remedy for toothache in traditional medicine, also used for respiratory ailments.</p>
+                    <a href="javascript:void(0)" onclick="showPlantDetails('clove')" class="Learn_More">Enhance Your Knowledge Further</a>
+                </div>
+                </div>
+            </div>
+        </section>
+        <section id="search">
+            <h2>Search & Filter Plants</h2>
+            <input type="text" id="search-input" placeholder="Search for plants...">
+            <button onclick="searchPlants()">Search</button>
+            <div id="search-results"></div>
+        </section>
+    </main>
+     <!-- Filter Modal -->
+     <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Advanced Filters</h2>
+            <div class="filter-section">
+                <!-- Filter groups -->
+                <div class="filter-group">
+                    <h3>By Name</h3>
+                    <input type="text" id="filter-name" placeholder="Search by plant name...">
+                </div>
+
+                <div class="filter-group">
+                    <h3>Medicinal Properties</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="anti-inflammatory"> Anti-inflammatory</label>
+                        <label><input type="checkbox" value="antioxidant"> Antioxidant</label>
+                        <label><input type="checkbox" value="digestive"> Digestive Health</label>
+                        <label><input type="checkbox" value="immunity"> Immunity Booster</label>
+                        <label><input type="checkbox" value="stress"> Stress Relief</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Health Goals</h3>
+                    <select id="decision-name">
+                        <option value="">Select Health Goal</option>
+                        <option value="skin-care">Skin Care</option>
+                        <option value="digestive-care">Digestive Health</option>
+                        <option value="stress-relief">Stress Relief</option>
+                        <option value="immunity-boost">Immunity Boost</option>
+                    </select>
+                    <div id="decision-specific" style="display:none;">
+                        <input type="text" id="specific-detail" placeholder="Enter specific requirement...">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>By Region</h3>
+                    <select id="region">
+                        <option value="">All Regions</option>
+                        <option value="tropical">Tropical</option>
+                        <option value="subtropical">Subtropical</option>
+                        <option value="temperate">Temperate</option>
+                        <option value="arid">Arid</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" data-filter="growth">
+                    <h3>Growth Habit</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="shrub"> Shrub</label>
+                        <label><input type="checkbox" value="herb"> Herb</label>
+                        <label><input type="checkbox" value="tree"> Tree</label>
+                        <label><input type="checkbox" value="climber"> Climber</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button id="applyFilters" class="action-btn">Apply Filters</button>
+                <button id="resetFilters" class="action-btn secondary">Reset</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Plant Details Modal -->
+    <div id="plantDetailsModal" class="modal">
+        <div class="modal-content plant-details-content">
+            <span class="close" onclick="closeModal('plantDetailsModal')">&times;</span>
+            <div id="plantDetailsContent">
+                <!-- Content will be filled dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="https://forms.gle/Gwo8JcMtH9HYHFid9" target="_blank" class="form-link">
+                Suggest a Plant
+            </a>
+            <a href="https://www.appsheet.com/start/e20af946-e7a9-47fe-b749-65c928fbea09" 
+               target="_blank" 
+               class="suggestions-link">
+                View Suggestions
+            </a>
+        </div>
+        <div class="credits">
+            <p>Developed by <span class="team-name">Team 404: Name Not Found</span></p>
+        </div>
+    </footer>
+    <script src="library.js"></script>
+</body>
+</html>

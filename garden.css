@@ -1,0 +1,830 @@
+/* Garden CSS - Styling for the virtual herb garden */
+
+:root {
+    --earth-brown: #8B4513;
+    --light-soil: #A67B5B;
+    --leaf-green: #4CAF50;
+    --dark-green: #2E7D32;
+    --sky-blue: #87CEEB;
+    --wood-color: #966F33;
+    --theme-background: #f0f5e9; /* Default theme background */
+    --theme-soil: #654321; /* Default theme soil */
+    --pixel-green: #57C84D;
+    --pixel-bg-green: #2E7D32;
+    --pixel-dark-green: #145A32;
+    --pixel-text-green: #0C3823;
+}
+
+/* Header styling to match other pages */
+header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#eab35b, #9f6e5e);
+    padding-left: 50px;
+    padding-right: 0px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1); 
+    font-size: medium;
+    font-weight: bold;
+}
+
+.logo {
+    font-family: 'Press Start 2P';
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    padding-right: 50px;
+    text-decoration: none;
+    color: rgb(69, 30, 6);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--earth-brown);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    justify-content: end;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background: rgba(129, 199, 132, 0.1);
+    color: var(--leaf-green);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    margin-left: 0px;
+    position: 0px;
+    padding-left: 2rem;
+    padding-right: 0%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 2px;
+    background: rgba(109, 76, 65, 0.2);
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login-btn {
+    background: white;
+    color: var(--leaf-green);
+    border: 2px solid var(--leaf-green);
+}
+
+.signup-btn {
+    background: var(--leaf-green);
+    color: white;
+    border: 2px solid transparent;
+}
+
+/* Main body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F5DC; /* Beige background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                      url('garden.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    color: var(--dark-green);
+    margin-top: 100px; /* Adjusted to account for header */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.garden-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Herb selection dropdown */
+#herb-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--leaf-green);
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--leaf-green);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}
+
+/* Virtual field styling */
+.field {
+    height: 400px;
+    margin-top: 20px;
+    background-color: var(--light-soil);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid var(--earth-brown);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle, transparent 10%, var(--light-soil) 10%, var(--light-soil) 12%, transparent 12%),
+        radial-gradient(circle, transparent 10%, var(--light-soil) 10%, var(--light-soil) 12%, transparent 12%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.3;
+}
+
+/* Plant stages */
+.plant {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.seed {
+    width: 20px;
+    height: 20px;
+    background-color: #8B4513;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.sprout {
+    width: 10px;
+    height: 30px;
+    background-color: var(--leaf-green);
+    margin: 0 auto;
+    position: relative;
+}
+
+.sprout::before, .sprout::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    background-color: var(--leaf-green);
+    border-radius: 50%;
+}
+
+.sprout::before {
+    top: 5px;
+    left: -8px;
+    transform: rotate(-20deg);
+}
+
+.sprout::after {
+    top: 5px;
+    right: -8px;
+    transform: rotate(20deg);
+}
+
+.mature-plant {
+    width: 150px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.young-plant {
+    width: 120px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+/* Instructions section */
+.instructions {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-left: 5px solid var(--leaf-green);
+    border-radius: 5px;
+}
+
+.instructions h3 {
+    margin-top: 0;
+    color: var(--dark-green);
+}
+
+.step {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.step.active {
+    background-color: rgba(76, 175, 80, 0.3);
+    border-left: 3px solid var(--leaf-green);
+}
+
+.step.completed {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* Feedback section */
+.feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.feedback.success {
+    display: block;
+    background-color: rgba(76, 175, 80, 0.2);
+    border-left: 5px solid var(--leaf-green);
+}
+
+.feedback.error {
+    display: block;
+    background-color: rgba(244, 67, 54, 0.2);
+    border-left: 5px solid #F44336;
+}
+
+/* Tools section */
+.tools {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.tool {
+    width: 60px;
+    height: 60px;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 24px;
+}
+
+.tool img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tool.active {
+    border-color: var(--leaf-green);
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Tool emoji fallbacks */
+.tool[data-tool="soil"]::before { content: "🌱"; }
+.tool[data-tool="seeds"]::before { content: "🌰"; }
+.tool[data-tool="water"]::before { content: "💧"; }
+.tool[data-tool="sun"]::before { content: "☀️"; }
+.tool[data-tool="shade"]::before { content: "🌥️"; }
+.tool[data-tool="fertilizer"]::before { content: "💩"; }
+.tool[data-tool="scissors"]::before { content: "✂️"; }
+.tool[data-tool="hoe"]::before { content: "🔨"; }
+.tool[data-tool="mulch"]::before { content: "🍂"; }
+.tool[data-tool="rhizome"]::before { content: "🥔"; }
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--leaf-green);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Health indicator for plants */
+.health-indicator {
+    margin-top: 10px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Plant growth animations */
+@keyframes seedGerminate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes sproutGrow {
+    0% { height: 10px; }
+    100% { height: 30px; }
+}
+
+@keyframes plantSway {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.seed {
+    animation: seedGerminate 2s infinite;
+}
+
+.sprout {
+    animation: sproutGrow 2s alternate infinite, plantSway 4s infinite;
+}
+
+.young-plant, .mature-plant {
+    animation: plantSway 8s infinite;
+}
+
+/* Customize model-viewer */
+model-viewer {
+    width: 100%;
+    height: 300px;
+    --poster-color: transparent;
+    --progress-bar-color: var(--leaf-green);
+    --progress-mask: transparent;
+}
+
+/* Feedback message styling */
+.feedback {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.feedback.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-left: 5px solid var(--leaf-green);
+    opacity: 1;
+}
+
+.feedback.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    border-left: 5px solid #F44336;
+    opacity: 1;
+}
+
+.feedback.warning {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-left: 5px solid #FFC107;
+    opacity: 1;
+}
+
+/* Tool active state */
+.tool.active {
+    background-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 0 2px var(--leaf-green);
+    transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .garden-container {
+        padding: 15px;
+    }
+    
+    .field {
+        height: 300px;
+    }
+    
+    .tools {
+        flex-wrap: wrap;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .auth-container {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+    }
+}
+
+/* Back button styling */
+.back-button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--wood-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    border: 2px solid var(--dark-green);
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px var(--earth-brown);
+}
+
+.back-button:hover {
+    background-color: var(--earth-brown);
+    transform: translateY(-3px);
+    box-shadow: 5px 5px var(--dark-green);
+}
+
+/* Gamification Elements */
+.points-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 10px auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    gap: 10px;
+}
+
+.points-icon {
+    font-size: 24px;
+}
+
+.points-value {
+    font-weight: bold;
+    color: var(--dark-green);
+    font-size: 18px;
+}
+
+.achievements-btn {
+    padding: 5px 10px;
+    background-color: var(--leaf-green);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 12px;
+}
+
+.achievements-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Achievements Panel */
+.achievements-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.achievements-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.achievements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.achievements-header h2 {
+    margin: 0;
+    color: var(--dark-green);
+}
+
+.close-achievements {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-achievements:hover {
+    color: #000;
+}
+
+.achievements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.achievement-item {
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s;
+}
+
+.achievement-item.unlocked {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.achievement-item.locked {
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+    opacity: 0.7;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: var(--dark-green);
+}
+
+.achievement-info p {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.achievement-points {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+/* Notifications */
+.points-notification, 
+.achievement-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+}
+
+.points-notification.active, 
+.achievement-notification.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.points-notification {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-icon {
+    background-color: var(--leaf-green);
+    color: white;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.notification-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.achievement-notification {
+    width: 250px;
+    text-align: center;
+}
+
+.achievement-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.achievement-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--dark-green);
+    margin-bottom: 5px;
+}
+
+.achievement-desc {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Level indicator */
+.level-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.level-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.level-badge {
+    background-color: var(--dark-green);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.level-title {
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+/* Theme indicator styling */
+.theme-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border-left: 4px solid var(--leaf-green);
+}
+
+.change-theme-btn {
+    padding: 5px 10px;
+    background-color: var(--leaf-green);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.change-theme-btn:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+/* Theme-specific body classes */
+body.theme-ayurvedic {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url('ahf.jpg');
+}
+
+body.theme-zen {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url('garden.jpg');
+}
+
+body.theme-fairy {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url('hb1.jpg');
+}
+
+body.theme-desert {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url('Tulsi.jpg');
+} 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HerbVerse - Immersive Herbal Experience</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <style>
+        #ar-scene { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .ar-interface {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+        }
+        .plant-card {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+        }
+        .environment-stats p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        #loading-screen {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #4CAF50;
+            z-index: 10000;
+        }
+        .mode-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        .mode-button {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .info-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+            z-index: 1000;
+            display: none;
+        }
+        .plant-details {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .navigation-controls {
+            position: fixed;
+            bottom: 70px;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+        .nav-button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            border-radius: 50%;
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            border: none;
+            margin: 0 10px;
+        }
+        .discovery-challenge {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(255,187,0,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 250px;
+            z-index: 1000;
+        }
+        .challenge-progress {
+            margin-top: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 5px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #4CAF50;
+            border-radius: 5px;
+            width: 0%;
+        }
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1001;
+        }
+        .back-button {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-nav">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        <h1 style="margin: 0; color: #4CAF50; font-size: 18px;">HerbVerse Explorer</h1>
+    </div>
+    
+    <div id="loading-screen">Initializing HerbVerse...</div>
+    
+    <a-scene 
+        id="ar-scene" 
+        embedded 
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix;"
+        renderer="logarithmicDepthBuffer: true;"
+        vr-mode-ui="enabled: true"
+    >
+        <a-assets>
+            <a-asset-item id="tulsi-model" src="tulsi.glb"></a-asset-item>
+            <a-asset-item id="ashwagandha-model" src="Ahwagandha.glb"></a-asset-item>
+            <a-asset-item id="turmeric-model" src="Turmeric.glb"></a-asset-item>
+            <a-asset-item id="cinnamon-model" src="Cinnamon.glb"></a-asset-item>
+            <a-asset-item id="cardamom-model" src="Cardamom.glb"></a-asset-item>
+            <a-asset-item id="clove-model" src="clove.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-camera>
+            <a-cursor raycaster="objects: .clickable" color="#4CAF50"></a-cursor>
+        </a-camera>
+        
+        <a-entity id="plants-container"></a-entity>
+        <a-entity id="environment-container"></a-entity>
+        <a-entity arjs-plane="planeType: floor" material="opacity: 0.5"></a-entity>
+    </a-scene>
+
+    <div class="mode-switcher">
+        <button class="mode-button" id="ar-mode-btn">AR Mode</button>
+        <button class="mode-button" id="vr-mode-btn">VR Garden</button>
+        <button class="mode-button" id="guided-tour-btn">Guided Tour</button>
+    </div>
+
+    <div class="ar-interface">
+        <div class="plant-suggestions">
+            <h3>Recommended Plants</h3>
+            <div class="plant-card" data-plant="tulsi">
+                <h3>Tulsi</h3>
+                <p class="match-percent">87% Match</p>
+                <button onclick="placePlant('tulsi')">Add</button>
+            </div>
+            <div class="plant-card" data-plant="ashwagandha">
+                <h3>Ashwagandha</h3>
+                <p class="match-percent">72% Match</p>
+                <button onclick="placePlant('ashwagandha')">Add</button>
+            </div>
+            <div class="plant-card" data-plant="turmeric">
+                <h3>Turmeric</h3>
+                <p class="match-percent">65% Match</p>
+                <button onclick="placePlant('turmeric')">Add</button>
+            </div>
+        </div>
+        <div class="environment-stats">
+            <p>Light: 🌞 <span id="light-value">4h/day</span></p>
+            <p>Space: 📏 <span id="space-value">2.3m²</span></p>
+            <p>Location: 📍 <span id="location-value">Loading...</span></p>
+            <p>Season: 🍂 <span id="season-value">Loading...</span></p>
+        </div>
+    </div>
+
+    <div class="info-panel" id="plant-info-panel">
+        <button class="close-btn" onclick="closeInfoPanel()">×</button>
+        <h3 id="info-plant-name">Plant Name</h3>
+        <div class="plant-details">
+            <p id="info-description">Plant description will appear here...</p>
+            <h4>Medicinal Properties:</h4>
+            <ul id="info-properties"></ul>
+            <h4>Growing Instructions:</h4>
+            <p id="info-growing"></p>
+            <h4>Traditional Uses:</h4>
+            <p id="info-traditional"></p>
+        </div>
+        <button onclick="viewPlantInLibrary()" class="view-btn">View in Library</button>
+    </div>
+
+    <div class="discovery-challenge" id="challenge-panel">
+        <h3>Herb Discovery Challenge</h3>
+        <p id="challenge-description">Find 5 medicinal herbs in your environment within 10 minutes!</p>
+        <p>Found: <span id="challenge-count">0</span>/5</p>
+        <div class="challenge-progress">
+            <div class="progress-bar" id="challenge-progress-bar"></div>
+        </div>
+        <p id="challenge-timer">Time: 10:00</p>
+        <button id="start-challenge-btn">Start Challenge</button>
+    </div>
+
+    <div class="navigation-controls">
+        <button class="nav-button" id="move-left">←</button>
+        <button class="nav-button" id="move-forward">↑</button>
+        <button class="nav-button" id="move-right">→</button>
+    </div>
+
+    <script src="AR.js"></script>
+    <script src="herbverse.js"></script>
+</body>
+</html>

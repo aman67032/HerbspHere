@@ -1,0 +1,492 @@
+/* Herbal Garden CSS */
+
+:root {
+    --earth-brown: #8B4513;
+    --light-soil: #A67B5B;
+    --leaf-green: #4CAF50;
+    --dark-green: #2E7D32;
+    --primary-green: #4CAF50;
+    --garden-green: #6b8c42;
+    --pixel-green: #88c070;
+    --pixel-light-green: #a8d890;
+    --pixel-dark-green: #306850;
+    --pixel-bg-green: #e0f8d0;
+    --pixel-text-green: #d0e7c0;
+    --light-green: #8bc34a;
+    --pale-green: #dcedc8;
+    --brown: #795548;
+    --light-brown: #a1887f;
+    --cream: #f5f5dc;
+    --off-white: #f8f8f8;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --accent-red: #e53935;
+    --accent-yellow: #ffd54f;
+    --accent-orange: #ff9800;
+    --accent-purple: #9c27b0;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Ayurvedic Dosha Colors */
+    --vata-color: #A569BD;
+    --pitta-color: #E74C3C;
+    --kapha-color: #3498DB;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--garden-green);
+    font-family: 'Press Start 2P', monospace;
+    background-image: url("dd.jpg"),
+        linear-gradient(rgba(0,0,0,0.1) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.1) 75%,
+        transparent 75%,
+        transparent);
+    background-size: 40px 40px;
+    animation: backgroundScroll 4s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    from { background-position: 0 0; }
+    to { background-position: 40px 40px; }
+}
+
+h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 36px;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#eab35b, #9f6e5e);
+    padding-left: 50px;
+    padding-right: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1); 
+    font-size: medium;
+    font-weight: bold;
+}
+
+.logo {
+    font-family: 'Press Start 2P';
+    color: rgb(69, 30, 6);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    padding-right: 50px;
+    text-decoration: none;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--earth-brown);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    background: rgba(129, 199, 132, 0.1);
+    color: var(--primary-green);
+}
+
+.auth-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 2px;
+    background: rgba(109, 76, 65, 0.2);
+}
+
+.login-btn, 
+.signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login-btn {
+    background: white;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.signup-btn {
+    background: var(--primary-green);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.login-btn:hover, 
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 150px auto 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    color: #8ec768;
+    text-shadow: 4px 4px var(--pixel-dark-green);
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+/* Garden Options */
+.garden-options {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.option-button {
+    width: 300px;
+    height: 350px;
+    background: var(--pixel-green);
+    border: 4px solid var(--pixel-bg-green);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 8px 8px var(--pixel-dark-green);
+}
+
+.option-button:hover {
+    transform: translateY(-5px);
+    background: var(--pixel-light-green);
+}
+
+.option-button::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    background: var(--pixel-dark-green);
+    z-index: -1;
+}
+
+.option-text {
+    color: var(--pixel-text-green);
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px var(--pixel-dark-green);
+    text-decoration: none;
+}
+
+.pixel-art {
+    width: 100%;
+    height: 250px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.pixel-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .auth-container {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .container {
+        margin-top: 200px;
+    }
+    
+    .garden-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .option-button {
+        width: 250px;
+        height: 300px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .option-button {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .pixel-art {
+        height: 180px;
+    }
+    
+    .option-text {
+        font-size: 14px;
+    }
+}
+
+/* Theme Garden Page Styles */
+.garden-themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.theme-card {
+    background-color: var(--pixel-green);
+    border: 4px solid var(--pixel-bg-green);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    box-shadow: 8px 8px var(--pixel-dark-green);
+}
+
+.theme-card::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    background: var(--pixel-dark-green);
+    z-index: -1;
+}
+
+.theme-card:hover {
+    transform: translateY(-10px);
+}
+
+.theme-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.theme-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.theme-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.theme-name {
+    font-family: 'Press Start 2P', monospace;
+    color: var(--pixel-text-green);
+    text-shadow: 2px 2px var(--pixel-dark-green);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.theme-description {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.theme-unlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.points-required {
+    font-size: 12px;
+    color: #333;
+}
+
+.unlock-btn, .locked-indicator, .use-theme-btn {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.unlock-btn {
+    background-color: var(--dark-green);
+}
+
+.locked-indicator {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.use-theme-btn {
+    background-color: var(--leaf-green);
+}
+
+.trophy-indicator {
+    display: inline-block;
+    background-color: rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 20px;
+    padding: 3px 8px;
+    font-size: 10px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.theme-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--pixel-green);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 10;
+    border: 2px solid var(--pixel-bg-green);
+}
+
+.premium-badge {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.new-badge {
+    background-color: #FF5722;
+}
+
+.back-btn {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Points display for theme garden */
+.points-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 10px auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    gap: 10px;
+}
+
+.points-icon {
+    font-size: 24px;
+}
+
+.points-value {
+    font-weight: bold;
+    color: var(--dark-green);
+    font-size: 18px;
+}
+
+.achievements-btn {
+    padding: 5px 10px;
+    background-color: var(--leaf-green);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 12px;
+}
+
+.achievements-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Back button for theme garden */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--garden-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    border: 2px solid var(--dark-green);
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px var(--earth-brown);
+}
+
+.back-button:hover {
+    background-color: var(--earth-brown);
+    transform: translateY(-3px);
+    box-shadow: 5px 5px var(--dark-green);
+} 

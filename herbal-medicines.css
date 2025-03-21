@@ -1,0 +1,627 @@
+/* Herbal Medicines Page Styles */
+:root {
+    --primary-green: #5cde50;
+    --secondary-green: #c7b081;
+    --earth-brown: #6d4c41;
+    --light-green: #c8e6c9;
+    --background-beige: #fff9f0;
+    --danger-red: #f44336;
+    --warning-amber: #ff9800;
+    --info-blue: #2196f3;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(109, 76, 65, 0.7)), 
+                url('herbal-background.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Press Start 2P', monospace;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.search-container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+#medicine-search {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+#search-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search-btn:hover {
+    background: var(--secondary-green);
+    transform: translateY(-2px);
+}
+
+/* Filters Section */
+.filters-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--earth-brown);
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat;
+    background-position: right 10px top 50%;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
+}
+
+/* Medicines Grid Section */
+.medicines-grid-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.medicines-grid-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-green);
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.medicines-grid-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-green);
+}
+
+.medicines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.medicine-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.medicine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.medicine-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.medicine-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.medicine-card:hover .medicine-image img {
+    transform: scale(1.1);
+}
+
+.difficulty-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+}
+
+.beginner {
+    background: var(--info-blue);
+}
+
+.intermediate {
+    background: var(--warning-amber);
+}
+
+.advanced {
+    background: var(--danger-red);
+}
+
+.medicine-info {
+    padding: 20px;
+}
+
+.medicine-info h3 {
+    margin-bottom: 10px;
+    color: var(--earth-brown);
+    font-size: 1.3rem;
+}
+
+.medicine-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: var(--light-green);
+    color: var(--primary-green);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.medicine-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.view-recipe-btn {
+    width: 100%;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-recipe-btn:hover {
+    background: var(--secondary-green);
+}
+
+/* Preparation Methods Section */
+.preparation-methods-section {
+    background: var(--background-beige);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.preparation-methods-section h2 {
+    margin-bottom: 40px;
+    color: var(--primary-green);
+    font-size: 2rem;
+}
+
+.methods-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.method-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.method-icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.method-card h3 {
+    margin-bottom: 15px;
+    color: var(--earth-brown);
+}
+
+.method-card p {
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.learn-more {
+    display: inline-block;
+    background: var(--primary-green);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background: var(--secondary-green);
+    transform: translateY(-2px);
+}
+
+/* Safety Section */
+.herbal-safety-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.safety-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.safety-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.safety-content h2 {
+    margin-bottom: 30px;
+    color: var(--primary-green);
+    font-size: 2rem;
+}
+
+.safety-guidelines {
+    list-style: none;
+}
+
+.safety-guidelines li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.safety-guidelines i {
+    color: var(--primary-green);
+}
+
+.safety-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.safety-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 20px;
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal, .close-method-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover, .close-method-modal:hover {
+    color: var(--primary-green);
+    transform: rotate(90deg);
+}
+
+/* Recipe Container Styles */
+.recipe-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.recipe-header h2 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.recipe-header .recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #666;
+}
+
+.recipe-ingredients {
+    margin-bottom: 30px;
+}
+
+.recipe-ingredients h3 {
+    color: var(--earth-brown);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.ingredients-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.ingredients-list li {
+    margin-bottom: 10px;
+}
+
+.recipe-steps {
+    margin-bottom: 30px;
+}
+
+.recipe-steps h3 {
+    color: var(--earth-brown);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.steps-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.steps-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.recipe-notes {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.recipe-notes h3 {
+    color: var(--earth-brown);
+    margin-bottom: 10px;
+}
+
+.recipe-tip {
+    background: var(--light-green);
+    color: var(--primary-green);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.recipe-warning {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--danger-red);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Method Tutorial Styles */
+.method-modal-content {
+    max-width: 900px;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tutorial-header h2 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.tutorial-content {
+    margin-bottom: 30px;
+}
+
+.tutorial-section {
+    margin-bottom: 30px;
+}
+
+.tutorial-section h3 {
+    color: var(--earth-brown);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.tutorial-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tutorial-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-tips {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tutorial-tips h3 {
+    color: var(--earth-brown);
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tips-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.tips-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 350px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .filter-group {
+        flex-basis: 100%;
+    }
+    
+    .safety-container {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 30px auto;
+    }
+    
+    .medicine-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .method-card p {
+        min-height: auto;
+    }
+    
+    .methods-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Active Classes */
+.medicine-card.hidden {
+    display: none;
+}
+
+/* Navigation Active Link */
+.nav-links a.active {
+    background: rgba(129, 199, 132, 0.3);
+    color: var(--primary-green);
+    font-weight: bold;
+} 

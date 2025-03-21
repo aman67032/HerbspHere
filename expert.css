@@ -1,0 +1,1108 @@
+/* CSS Variables */
+:root {
+    --primary-green: #4CAF50;
+    --secondary-green: #2E7D32;
+    --earth-brown: #5D4037;
+    --light-brown: #8D6E63;
+    --off-white: #FAFAFA;
+    --light-gray: #EEEEEE;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* Base Styles */
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url('herb-pattern-bg.jpg') center/200px repeat;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.expert-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    flex: 1;
+}
+
+/* Section Headings */
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+.section-heading h2 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#739f5e,#eab35b);
+    padding-left: 50px;
+    padding-right: 0px;
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1); 
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* Logo and Navigation */
+.logo {
+    font-family: 'Press Start 2P', monospace;
+    color: rgb(69, 30, 6);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    padding-right: 50px;
+    text-decoration: none;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav-links a {
+    color: var(--earth-brown);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    background: rgba(129, 199, 132, 0.1);
+    color: var(--primary-green);
+}
+
+.auth-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 2px;
+    background: rgba(109, 76, 65, 0.2);
+}
+
+.login-btn, 
+.signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    background: var(--primary-green);
+    display: inline-block;
+}
+
+.login-btn:hover, 
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: rgb(69, 30, 6);
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.advice-hero {
+    text-align: center;
+    padding: 5rem 5%;
+    position: relative;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('herb-pattern-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+}
+
+.advice-hero::before {
+    display: none;
+}
+
+.advice-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.advice-hero .section-description {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* Knowledge Cards Section */
+.herbal-knowledge {
+    padding: 4rem 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.knowledge-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.knowledge-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(129, 199, 132, 0.1);
+}
+
+.knowledge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(129, 199, 132, 0.3);
+}
+
+.knowledge-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.knowledge-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.knowledge-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.knowledge-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.knowledge-card .read-more {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.knowledge-card .read-more i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.knowledge-card .read-more:hover {
+    color: var(--secondary-green);
+}
+
+.knowledge-card .read-more:hover i {
+    transform: translateX(3px);
+}
+
+/* Consultation Options */
+.consultation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 4rem 5%;
+}
+
+.consultation-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(129, 199, 132, 0.2);
+}
+
+.consultation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(46, 125, 50, 0.15);
+    border-color: rgba(129, 199, 132, 0.5);
+}
+
+.consultation-card .card-icon {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.consultation-card .card-icon i {
+    font-size: 2.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.consultation-card:hover .card-icon i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.consultation-card h2 {
+    color: var(--primary-green);
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.consultation-card p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.consultation-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.consultation-card li {
+    padding: 0.5rem 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.consultation-card li i {
+    color: var(--primary-green);
+}
+
+.price-tag {
+    background: rgba(129, 199, 132, 0.1);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+.remedy-btn,
+.expert-btn {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.remedy-btn:hover,
+.expert-btn:hover {
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Seasonal Tips Section */
+.seasonal-tips {
+    padding: 4rem 5%;
+    background-color: rgba(242, 242, 242, 0.5);
+}
+
+.season-tabs {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.season-panel {
+    display: none;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.season-panel.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.season-info h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.season-info h4 {
+    color: var(--earth-brown);
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.herb-list, .tips-list {
+    padding-left: 1.5rem;
+}
+
+.herb-list li, .tips-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Expert Profiles */
+.featured-experts {
+    padding: 4rem 5%;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+.expert-profile {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(129, 199, 132, 0.1);
+}
+
+.expert-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(129, 199, 132, 0.3);
+}
+
+.expert-image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    align-self: center;
+}
+
+.expert-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.expert-profile:hover .expert-image {
+    box-shadow: 0 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+.expert-availability {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-green);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.expert-info {
+    flex: 1;
+    text-align: center;
+}
+
+.expert-info h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.expert-credentials {
+    color: #555;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.expert-specialty {
+    color: #777;
+    margin-bottom: 0.7rem;
+}
+
+.expert-rating {
+    color: #FFB300;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.expert-rating span {
+    color: #555;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.expert-bio {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Herbal First Aid Section */
+.herbal-first-aid {
+    padding: 4rem 5%;
+    background-color: rgba(242, 242, 242, 0.5);
+}
+
+.first-aid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.first-aid-item {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(129, 199, 132, 0.1);
+}
+
+.first-aid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(129, 199, 132, 0.3);
+}
+
+.first-aid-item h3 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.first-aid-item h3 i {
+    color: var(--secondary-green);
+    font-size: 1.5rem;
+}
+
+.remedy-info p {
+    margin-bottom: 1rem;
+}
+
+.remedy-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Booking Form */
+.booking-form {
+    padding: 4rem 5%;
+    background-color: white;
+}
+
+#consultation-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    color: #555;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(129, 199, 132, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-rating {
+    color: #FFB300;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin: 0;
+    color: var(--primary-green);
+    font-size: 1rem;
+}
+
+.author-info p {
+    margin: 0;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-nav button {
+    background: transparent;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-nav button:hover {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-dots .dot {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonial-dots .dot.active {
+    background: var(--primary-green);
+    transform: scale(1.2);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 5%;
+    background-color: white;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-item h3 {
+    margin: 0;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.faq-item h3:hover {
+    background: #f5f5f5;
+}
+
+.faq-item h3 i {
+    color: var(--primary-green);
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+    min-width: 16px;
+}
+
+.faq-item.active h3 {
+    border-bottom: 1px solid #eee;
+}
+
+.faq-item.active h3 i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 1000px;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    visibility: visible;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(#739f5e,#eab35b);
+    color: #333;
+    padding: 3rem 1rem 1rem;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: rgb(69, 30, 6);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-green);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .experts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .expert-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .expert-image-container {
+        margin: 0 auto 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        flex-direction: column;
+        background: linear-gradient(#739f5e,#eab35b);
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        z-index: 1001;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.3s ease;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        right: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .auth-container {
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 2rem;
+        width: 100%;
+    }
+    
+    .auth-container::before {
+        display: none;
+    }
+    
+    .auth-container a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .advice-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+    
+    .consultation-options,
+    .knowledge-cards,
+    .first-aid-grid,
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .advice-hero {
+        padding: 3rem 5%;
+    }
+    
+    .section-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .expert-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container {
+    opacity: 1;
+}
+
+.modal-container.closing {
+    opacity: 0;
+}
+
+/* Success modal specific styles */
+.modal-body.success-body {
+    text-align: center;
+}
+
+.modal-body.success-body i {
+    font-size: 4rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+/* Special navigation link for 3D Garden */
+.special-nav-link {
+    background-color: #4CAF50;
+    color: white !important;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 5px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.special-nav-link:hover {
+    background-color: #2E7D32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

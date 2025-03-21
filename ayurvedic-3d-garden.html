@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Ayurvedic Garden - HerbspHere</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        #scene-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 100;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(46, 125, 50, 0.9);
+        }
+        
+        .controls-info {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 100;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .plant-info {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            z-index: 100;
+            font-family: Arial, sans-serif;
+        }
+        
+        .plant-info h2 {
+            margin-top: 0;
+            color: #2E7D32;
+            font-size: 1.5em;
+        }
+        
+        .plant-info .scientific-name {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .plant-info .properties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        
+        .plant-info .property {
+            background-color: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        .plant-info .doshas {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        
+        .plant-info .dosha {
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: white;
+        }
+        
+        .dosha-vata { background-color: #9C27B0; }
+        .dosha-pitta { background-color: #F44336; }
+        .dosha-kapha { background-color: #2196F3; }
+        
+        .loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2E7D32;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            color: white;
+        }
+        
+        .loading-bar-container {
+            width: 200px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .loading-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            transition: width 0.3s;
+        }
+        
+        .meditation-message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 200;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="scene-container"></div>
+    <a href="theme-garden.html" class="back-button">← Back to Themes</a>
+    <div class="controls-info">
+        Controls: W/A/S/D or Arrow Keys to move | Mouse to look around | E or Click to interact with plants | Stay still for meditation mode
+    </div>
+    <div class="plant-info" id="plant-info">
+        <h2 id="plant-name"></h2>
+        <span class="scientific-name" id="scientific-name"></span>
+        <p id="plant-description"></p>
+        <div class="properties" id="plant-properties"></div>
+        <div class="doshas" id="plant-doshas"></div>
+        <div id="plant-uses"></div>
+    </div>
+    <div class="meditation-message" id="meditation-message">
+        <h3>Entering Meditation Mode</h3>
+        <p>Feel the healing energy of the Ayurvedic garden...</p>
+        <p>Breathe deeply and connect with nature's wisdom.</p>
+    </div>
+    <div class="loading-screen" id="loading-screen">
+        <h2>Loading Ayurvedic Garden...</h2>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Three.js and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    
+    <!-- Garden JavaScript -->
+    <script src="ayurvedic-garden.js"></script>
+</body>
+</html> 
