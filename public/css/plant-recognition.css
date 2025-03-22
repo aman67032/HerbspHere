@@ -1,0 +1,213 @@
+.ai-recognition {
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+}
+
+.ai-recognition h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 2rem;
+}
+
+.ai-recognition-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Camera Section */
+.camera-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.camera-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.camera-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.camera-placeholder i {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+#video-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Scanning Animation */
+.scanning-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border: 2px solid rgba(76, 175, 80, 0.5);
+}
+
+.scanning-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #4CAF50;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
+
+/* Buttons */
+.ai-button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.ai-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.ai-button:hover {
+    background-color: #45a049;
+}
+
+.ai-button i {
+    font-size: 1.2rem;
+}
+
+/* Results Section */
+.ai-results {
+    padding: 2rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.result-placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.plant-result {
+    display: none;
+}
+
+.plant-identification {
+    margin-bottom: 1.5rem;
+}
+
+.plant-identification h3 {
+    color: #4CAF50;
+    margin: 0 0 0.5rem 0;
+}
+
+.plant-identification p {
+    color: #8bc34a;
+    margin: 0;
+}
+
+.plant-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.medicinal-properties {
+    margin-top: 1.5rem;
+}
+
+.medicinal-properties h4 {
+    color: #4CAF50;
+    margin: 0 0 1rem 0;
+}
+
+.medicinal-properties ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.medicinal-properties li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.medicinal-properties li::before {
+    content: "•";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+}
+
+.view-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ai-recognition-container {
+        grid-template-columns: 1fr;
+    }
+
+    .camera-preview {
+        aspect-ratio: 4/3;
+    }
+
+    .ai-button-container {
+        flex-wrap: wrap;
+    }
+
+    .ai-button {
+        flex: 1;
+        min-width: 150px;
+    }
+} 

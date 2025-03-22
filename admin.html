@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbspHere Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="admin-header">
+                <img src="logo.png" alt="HerbspHere Logo" class="admin-logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="admin-menu">
+                <li class="active" data-tab="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-tab="users">
+                    <i class="fas fa-users"></i>
+                    <span>User Management</span>
+                </li>
+                <li data-tab="content">
+                    <i class="fas fa-leaf"></i>
+                    <span>Content Management</span>
+                </li>
+                <li data-tab="moderation">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Content Moderation</span>
+                </li>
+                <li data-tab="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </li>
+                <li data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+            <div class="admin-footer">
+                <button id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="admin-main">
+            <header class="admin-top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="admin-profile">
+                    <span class="admin-name">Admin User</span>
+                    <img src="admin-avatar.jpg" alt="Admin" class="admin-avatar">
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- Dashboard Tab -->
+                <section id="dashboard" class="tab-content active">
+                    <h2>Dashboard Overview</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <div class="stat-info">
+                                <h3>Total Users</h3>
+                                <p id="total-users">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-seedling"></i>
+                            <div class="stat-info">
+                                <h3>Plants Added</h3>
+                                <p id="total-plants">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-comments"></i>
+                            <div class="stat-info">
+                                <h3>Forum Posts</h3>
+                                <p id="total-posts">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <h3>Daily Visits</h3>
+                                <p id="daily-visits">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-charts">
+                        <div class="chart-container">
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="activityChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Management Tab -->
+                <section id="users" class="tab-content">
+                    <h2>User Management</h2>
+                    <div class="user-controls">
+                        <button class="add-user-btn">
+                            <i class="fas fa-user-plus"></i> Add New User
+                        </button>
+                        <div class="user-filters">
+                            <select id="user-role-filter">
+                                <option value="all">All Roles</option>
+                                <option value="admin">Admin</option>
+                                <option value="moderator">Moderator</option>
+                                <option value="user">User</option>
+                            </select>
+                            <select id="user-status-filter">
+                                <option value="all">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="suspended">Suspended</option>
+                                <option value="banned">Banned</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="users-table-container">
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- User rows will be added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Content Management Tab -->
+                <section id="content" class="tab-content">
+                    <h2>Content Management</h2>
+                    <div class="content-controls">
+                        <div class="content-actions">
+                            <button class="add-plant-btn">
+                                <i class="fas fa-plus"></i> Add New Plant
+                            </button>
+                            <button class="bulk-edit-btn">
+                                <i class="fas fa-edit"></i> Bulk Edit
+                            </button>
+                        </div>
+                        <div class="content-filters">
+                            <select id="content-type-filter">
+                                <option value="all">All Content</option>
+                                <option value="plants">Plants</option>
+                                <option value="articles">Articles</option>
+                                <option value="guides">Guides</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content-grid" id="content-grid">
+                        <!-- Content cards will be added dynamically -->
+                    </div>
+                </section>
+
+                <!-- Content Moderation Tab -->
+                <section id="moderation" class="tab-content">
+                    <h2>Content Moderation</h2>
+                    <div class="moderation-queue">
+                        <div class="queue-filters">
+                            <select id="queue-type-filter">
+                                <option value="all">All Items</option>
+                                <option value="reported">Reported Content</option>
+                                <option value="pending">Pending Review</option>
+                                <option value="flagged">Flagged Items</option>
+                            </select>
+                        </div>
+                        <div class="queue-items" id="moderation-queue-items">
+                            <!-- Moderation items will be added dynamically -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytics Tab -->
+                <section id="analytics" class="tab-content">
+                    <h2>Analytics</h2>
+                    <div class="analytics-controls">
+                        <div class="date-range-picker">
+                            <input type="date" id="start-date">
+                            <span>to</span>
+                            <input type="date" id="end-date">
+                            <button id="apply-date-range">Apply</button>
+                        </div>
+                    </div>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>User Growth</h3>
+                            <canvas id="userAnalyticsChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Content Engagement</h3>
+                            <canvas id="engagementChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Popular Plants</h3>
+                            <canvas id="popularPlantsChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>User Activity</h3>
+                            <canvas id="activityHeatmap"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Tab -->
+                <section id="settings" class="tab-content">
+                    <h2>System Settings</h2>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>General Settings</h3>
+                            <form id="general-settings-form">
+                                <div class="form-group">
+                                    <label>Site Name</label>
+                                    <input type="text" value="HerbspHere">
+                                </div>
+                                <div class="form-group">
+                                    <label>Site Description</label>
+                                    <textarea>Interactive Herbal Garden Platform</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Maintenance Mode</label>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h3>Email Settings</h3>
+                            <form id="email-settings-form">
+                                <div class="form-group">
+                                    <label>SMTP Server</label>
+                                    <input type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>SMTP Port</label>
+                                    <input type="number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email From</label>
+                                    <input type="email">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h3>Security Settings</h3>
+                            <form id="security-settings-form">
+                                <div class="form-group">
+                                    <label>Two-Factor Authentication</label>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Session Timeout (minutes)</label>
+                                    <input type="number" value="30">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="settings-actions">
+                        <button class="save-settings-btn">Save Changes</button>
+                        <button class="reset-settings-btn">Reset to Default</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New User</h2>
+            <form id="add-user-form">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select required>
+                        <option value="user">User</option>
+                        <option value="moderator">Moderator</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Add User</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html> 

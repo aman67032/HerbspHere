@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="plant-recognition.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
@@ -17,7 +18,10 @@
     <link rel="preload" href="FEED.jpg" as="image">
     
     <title>HerbspHere - Interactive Herbal Garden</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- TensorFlow.js and MobileNet -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
     <script src="GlitchText.js"></script>
 </head>
 <body>
@@ -33,10 +37,11 @@
           <a href="VR.html"><span data-text="HerbVerse">HerbVerse</span></a>
           <a href="herbalgarden.html"><span data-text="Herbal Garden">Herbal Garden</span></a>
           <a href="herbal-medicines.html">Herbal Medicines</a>
-          <a href="#faq">FAQs</a>
+          <a href="community.html">Community</a>
           <div class="auth-container">
             <a href="login.html" class="login-btn">Login</a>
             <a href="signup.html" class="signup-btn">Sign Up</a>
+            <a href="admin.html" class="admin-btn" id="admin-link" style="display: none;">Admin Panel</a>
           </div>
         </nav>
     </header>

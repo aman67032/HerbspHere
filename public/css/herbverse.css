@@ -1,0 +1,381 @@
+/* Main Container */
+.herbverse-container {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Header */
+.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.back-button {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ar-mode-toggle {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Side Panels */
+.side-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.left-panel {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.right-panel {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Recommended Plants */
+.recommended-plants {
+    margin-top: 1rem;
+}
+
+.plant-card {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.plant-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #4CAF50;
+}
+
+.plant-card p {
+    margin: 0 0 0.5rem 0;
+    color: #8bc34a;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Environment Info */
+.environment-info {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.loading {
+    color: #666;
+    font-style: italic;
+}
+
+/* AR View */
+.ar-view {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-message {
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+/* Navigation Controls */
+.navigation-controls {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.navigation-controls button {
+    background-color: rgba(76, 175, 80, 0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Challenge Panel */
+.herb-discovery-challenge {
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid #FFC107;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.herb-discovery-challenge h2 {
+    color: #FFC107;
+    margin: 0 0 1rem 0;
+}
+
+.challenge-stats {
+    margin: 1rem 0;
+}
+
+.start-challenge {
+    background-color: #FFC107;
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Plant Detection Info */
+.detection-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.detection-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.scanner-ring {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #4CAF50;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Camera Overlay */
+.camera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.scanning-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(76, 175, 80, 0.5);
+}
+
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4CAF50;
+}
+
+.top-left {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+.scanning-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 2px;
+    background-color: #4CAF50;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translate(-50%, -150px);
+    }
+    50% {
+        transform: translate(-50%, 150px);
+    }
+    100% {
+        transform: translate(-50%, -150px);
+    }
+}
+
+/* AR Overlay Canvas */
+#ar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Camera Feed */
+#camera-feed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Detection Results */
+.detection-result {
+    background-color: rgba(76, 175, 80, 0.9);
+    padding: 1rem;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.detection-result h4 {
+    margin: 0;
+    color: white;
+}
+
+.detection-result p {
+    margin: 0.5rem 0 0 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Confidence Meter */
+.confidence-meter {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.confidence-level {
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .herbverse-container {
+        grid-template-columns: 250px 1fr 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .herbverse-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .side-panel {
+        position: fixed;
+        height: 100vh;
+        width: 250px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .side-panel.active {
+        transform: translateX(0);
+    }
+    
+    .right-panel {
+        right: 0;
+        transform: translateX(100%);
+    }
+} 

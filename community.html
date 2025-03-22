@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbspHere Community</title>
+    <link rel="stylesheet" href="community.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger-menu">☰</button>
+        <a class="logo" href="index.html">HerbspHere</a>
+        <nav class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="plant library.html">Plant Library</a>
+            <a href="expert.html">Expert Advice</a>
+            <a href="community.html" class="active">Community</a>
+            <a href="herbalgarden.html">Herbal Garden</a>
+            <div class="auth-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="community-container">
+        <section class="community-header">
+            <h1>HerbspHere Community</h1>
+            <p>Connect, Share, and Learn with Fellow Herb Enthusiasts</p>
+        </section>
+
+        <section class="community-features">
+            <div class="forums-section">
+                <h2>Discussion Forums</h2>
+                <div class="forum-categories">
+                    <div class="forum-category">
+                        <h3>Growing Tips & Techniques</h3>
+                        <div class="forum-threads" id="growing-tips-threads">
+                            <!-- Threads will be loaded dynamically -->
+                        </div>
+                        <button class="new-thread-btn" data-category="growing-tips">Start New Thread</button>
+                    </div>
+
+                    <div class="forum-category">
+                        <h3>Plant Identification Help</h3>
+                        <div class="forum-threads" id="plant-id-threads">
+                            <!-- Threads will be loaded dynamically -->
+                        </div>
+                        <button class="new-thread-btn" data-category="plant-id">Start New Thread</button>
+                    </div>
+
+                    <div class="forum-category">
+                        <h3>Herbal Remedies Discussion</h3>
+                        <div class="forum-threads" id="remedies-threads">
+                            <!-- Threads will be loaded dynamically -->
+                        </div>
+                        <button class="new-thread-btn" data-category="remedies">Start New Thread</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="community-sidebar">
+                <div class="user-profile">
+                    <div class="profile-header">
+                        <img src="placeholder-profile.jpg" alt="Profile" id="profile-image">
+                        <h3 id="user-name">User Name</h3>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="posts-count">0</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="replies-count">0</span>
+                            <span class="stat-label">Replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trending-topics">
+                    <h3>Trending Topics</h3>
+                    <ul id="trending-topics-list">
+                        <!-- Topics will be loaded dynamically -->
+                    </ul>
+                </div>
+
+                <div class="online-members">
+                    <h3>Online Members</h3>
+                    <ul id="online-members-list">
+                        <!-- Online members will be loaded dynamically -->
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- New Thread Modal -->
+    <div class="modal" id="new-thread-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create New Thread</h2>
+            <form id="new-thread-form">
+                <input type="text" id="thread-title" placeholder="Thread Title" required>
+                <textarea id="thread-content" placeholder="Write your post here..." required></textarea>
+                <div class="form-actions">
+                    <button type="submit">Post Thread</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="community.js"></script>
+</body>
+</html> 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbVerse Explorer</title>
+    <link rel="stylesheet" href="/css/herbverse.css">
+    <!-- Add TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+    <div class="herbverse-container">
+        <!-- Back Navigation -->
+        <div class="nav-header">
+            <a href="/" class="back-button">← Back to Home</a>
+            <button class="ar-mode-toggle">AR Mode</button>
+        </div>
+
+        <!-- Left Panel - Recommended Plants -->
+        <div class="side-panel left-panel">
+            <h2>Recommended Plants</h2>
+            <div class="recommended-plants">
+                <div class="plant-card">
+                    <h3>Tulsi</h3>
+                    <p>87% Match</p>
+                    <button class="add-button">Add</button>
+                </div>
+                <div class="plant-card">
+                    <h3>Ashwagandha</h3>
+                    <p>72% Match</p>
+                    <button class="add-button">Add</button>
+                </div>
+                <div class="plant-card">
+                    <h3>Turmeric</h3>
+                    <p>65% Match</p>
+                    <button class="add-button">Add</button>
+                </div>
+            </div>
+
+            <!-- Plant Detection Info -->
+            <div class="detection-info">
+                <h3>Scanning for Plants...</h3>
+                <div class="detection-status">
+                    <div class="scanner-ring"></div>
+                    <p>Point camera at plants to identify</p>
+                </div>
+            </div>
+
+            <!-- Environment Info -->
+            <div class="environment-info">
+                <div class="info-item">
+                    <span class="label">Light:</span>
+                    <span class="value">4h/day</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Space:</span>
+                    <span class="value">2.3m²</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Location:</span>
+                    <span class="value loading">Loading...</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Season:</span>
+                    <span class="value loading">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main AR View -->
+        <div class="ar-view">
+            <div class="camera-overlay">
+                <div class="scanning-frame">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                </div>
+                <div class="scanning-line"></div>
+            </div>
+            <div class="loading-message">Initializing HerbVerse...</div>
+            <video id="camera-feed" autoplay playsinline style="display: none;"></video>
+            <canvas id="ar-overlay"></canvas>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button class="nav-left">←</button>
+            <button class="nav-up">↑</button>
+            <button class="nav-right">→</button>
+        </div>
+
+        <!-- Right Panel - Challenge -->
+        <div class="side-panel right-panel">
+            <div class="herb-discovery-challenge">
+                <h2>Herb Discovery Challenge</h2>
+                <p>Find 5 medicinal herbs in your environment within 10 minutes!</p>
+                <div class="challenge-stats">
+                    <p class="found-counter">Found: 0/5</p>
+                    <p class="time-counter">Time: 10:00</p>
+                </div>
+                <button class="start-challenge">Start Challenge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/js/herbverse.js"></script>
+</body>
+</html> 

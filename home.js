@@ -734,3 +734,19 @@ function makeSliderAreasClickable() {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkAdminStatus();
+    // ... existing DOMContentLoaded code ...
+});
+
+function checkAdminStatus() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const adminLink = document.getElementById('admin-link');
+    
+    if (user && user.role === 'admin') {
+        adminLink.style.display = 'inline-block';
+    } else {
+        adminLink.style.display = 'none';
+    }
+}
